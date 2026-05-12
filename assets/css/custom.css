@@ -19,3 +19,66 @@
 .btn-cliente:hover{
     background-color: #0035985c !important;
 }
+
+.menu-lateral-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    text-decoration: none;
+    color: #212529;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    font-size: 15px;
+}
+
+.menu-lateral-item:hover {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.menu-lateral-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 1rem;
+    stroke: #eb6f00;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.offcanvas-close-btn {
+    color: #003698;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 15px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.offcanvas-close-btn:hover {
+    text-decoration: underline;
+}
+
+.filter-orange {
+    filter: invert(47%) sepia(91%) saturate(2333%) hue-rotate(1deg) brightness(97%) contrast(106%);
+}
+
+.menu-lateral-arrow-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-menu-active {
+    background-color: #4b4b4b !important;
+    border-color: #4b4b4b !important;
+}
+
+.btn-menu-active #icon-close {
+    filter: brightness(0);
+}

@@ -41,8 +41,10 @@
                 <img src="./assets/img/logo-empresa-56x56.svg" alt="Logo-Itaú" class="pepito" style="height: 56px; width: 56px;">
             </a>
 
-            <button class="btn bg-white border border-secondary d-flex align-items-center px-2 py-1">
-                <span>Menú</span>
+            <button id="btn-menu-lateral" class="btn bg-white border border-secondary d-flex align-items-center px-2 py-1 gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" style="transition: all 0.2s;">
+                <img src="./assets/img/feather-icons/menu.svg" alt="Menú" id="icon-menu" width="20" height="20" style="stroke: #000;">
+                <img src="./assets/img/feather-icons/x.svg" alt="Cerrar" id="icon-close" width="20" height="20" class="d-none" style="stroke: #000;">
+                <span class="fw-bold text-dark">Menú</span>
             </button>
             <a href="#" class="text-decoration-none text-dark">Itaú beneficios</a>
 
@@ -132,9 +134,122 @@
      </footer>
     <!--Comienzo Footer-->
 
+    <div class="offcanvas offcanvas-start border-0 shadow-sm" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 350px;">
+        <div class="offcanvas-header justify-content-end p-0">
+            <button type="button" class="offcanvas-close-btn mt-2 me-2" data-bs-dismiss="offcanvas" aria-label="Close">
+                Cerrar <span aria-hidden="true" style="font-size: 1.5rem; line-height: 1;">&times;</span>
+            </button>
+        </div>
+        <div class="offcanvas-body p-0 mt-2 pb-4">
+            <ul class="list-unstyled m-0">
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/bar-chart-2.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Inversiones</span>
+                        </div>
+
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/credit-card.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Cuentas</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/smartphone.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Pagos</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/pie-chart.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Financiamiento</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/globe.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Comercio exterior</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/download.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Recaudación</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/briefcase.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Corporate Finance</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/heart.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Sostenibilidad</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/database.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Mesa de dinero</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/shield.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Seguros</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="menu-lateral-item">
+                        <div class="d-flex align-items-center">
+                            <img src="./assets/img/feather-icons/map.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <span>Bancos globales</span>
+                        </div>
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
