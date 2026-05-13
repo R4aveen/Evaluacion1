@@ -95,3 +95,25 @@ hr.vertical {
   height: 50px;
   float: left;
 }
+
+.container-fluid-nav{
+    padding-left: 20rem!important;
+    padding-right: 20rem!important;
+}
+
+.item-hover{
+    height: 100%;
+    padding: 0 10px 0 10px;
+    align-items: center !important;
+}
+
+.item-hover:hover{
+    background-color: #ede7e3 !important;
+}
+
+@media (max-width: 768px) {
+    .container-fluid-nav{
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    }
+}

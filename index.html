@@ -14,57 +14,77 @@
 <body>
 
     <!-- Header (Mas o menos esto ocupare creo, si hay confilctos lo arreglamos en el merge ) -->
-    <header class="w-100" style="font-family: sans-serif;">
-        <div class="w-100 d-none d-lg-flex justify-content-center" style="background-color: #faf7f5; height: 30px; ">
-            <div class="container-fluid px-5 d-flex justify-content-between align-items-stretch">
-                
+    <header class="w-100 mb-5" style="font-family: sans-serif;">
+        <div class="container-fluid-nav w-100 d-none d-lg-flex justify-content-center"
+            style="background-color: #faf7f5; height: 30px; ">
+            <nav class="container-fluid px-5 d-flex justify-content-between align-items-stretch">
+
                 <ul class="d-flex list-unstyled m-0 p-0 h-100 align-items-stretch mx-5">
                     <li class="h-100 d-flex">
-                        <a href="#" class="text-decoration-none text-dark px-3 d-flex align-items-center fw-bold bg-white h-100" style="font-size: 13px;">Personas</a>
+                        <a href="#"
+                            class="text-decoration-none text-dark px-3 d-flex align-items-center fw-bold bg-white h-100"
+                            style="font-size: 13px;">Personas</a>
                     </li>
                     <li class="h-100 d-flex">
-                        <a href="#" class="text-decoration-none text-black px-3 d-flex align-items-center h-100" style="background-color: #eee8e4; font-size: 13px;">Empresas</a>
+                        <a href="#" class="text-decoration-none text-black px-3 d-flex align-items-center h-100"
+                            style="background-color: #eee8e4; font-size: 13px;">Empresas</a>
                     </li>
                 </ul>
 
                 <ul class="d-flex list-unstyled m-0 p-0 align-items-center gap-3 mx-5">
-                    <li class="d-flex align-items-center gap-1">
-                        <img src="assets/img/feather-icons/activity.svg" alt="Accesibilidad" class="menu-lateral-arrow-icon filter-orange">
-                        <button class="btn btn-sm bg-white text-dark d-flex align-items-center gap-1" style="font-size: 13px; padding: 2px 8px;">Accesibilidad <img src="assets/img/feather-icons/chevron-down.svg" alt="Más opciones" style="width:14px; height:14px; color:#eb6f00;"></button>
+                    <li class="d-flex align-items-center gap-1 item-hover">
+                        <img src="assets/img/feather-icons/activity.svg" alt="Accesibilidad"
+                            class="menu-lateral-arrow-icon filter-orange">
+                        <button class="btn btn-sm text-dark d-flex align-items-center gap-1"
+                            style="font-size: 13px; padding: 2px 8px;">Accesibilidad <img
+                                src="assets/img/feather-icons/chevron-down.svg" alt="Más opciones"
+                                style="width:14px; height:14px; color:#eb6f00;"></button>
                     </li>
-                    <li class="d-flex align-items-center gap-1">
-                        <img src="assets/img/feather-icons/help-circle.svg" alt="Contáctanos" class="menu-lateral-arrow-icon filter-orange">
-                        <a href="#" class="text-decoration-none text-dark d-flex align-items-center" style="font-size: 13px;">Contáctanos</a>
+                    <li class="d-flex align-items-center gap-1 item-hover">
+                        <img src="assets/img/feather-icons/help-circle.svg" alt="Contáctanos"
+                            class="menu-lateral-arrow-icon filter-orange">
+                        <a href="#" class="text-decoration-none text-dark d-flex align-items-center"
+                            style="font-size: 13px;">Contáctanos</a>
                     </li>
-                    <li class="d-flex align-items-center gap-1">
-                        <img src="assets/img/feather-icons/map-pin.svg" alt="Sucursales" class="menu-lateral-arrow-icon filter-orange">
-                        <a href="#" class="text-decoration-none text-dark d-flex align-items-center" style="font-size: 13px;">Sucursales</a>
+                    <li class="d-flex align-items-center gap-1 item-hover">
+                        <img src="assets/img/feather-icons/map-pin.svg" alt="Sucursales"
+                            class="menu-lateral-arrow-icon filter-orange">
+                        <a href="#" class="text-decoration-none text-dark d-flex align-items-center"
+                            style="font-size: 13px;">Sucursales</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
 
 
-        <nav class="container-fluid py-2 px-3 px-lg-5 d-flex align-items-center gap-4 bg-white shadow-sm"  >
-                
+        <nav class="container-fluid container-fluid-nav py-2 d-flex align-items-center gap-4 bg-white shadow-sm">
+
             <a href="/" class="d-flex align-items-center text-decoration-none border-end pe-4 d-lg-flex">
-                <img src="./assets/img/logo-empresa-56x56.svg" alt="Logo-Itaú" class="pepito" style="height: 56px; width: 56px;">
+                <img src="./assets/img/logo-empresa-56x56.svg" alt="Logo-Itaú" class="pepito"
+                    style="height: 56px; width: 56px;">
             </a>
-            
+
             <div class="d-flex align-items-center me-auto d-lg-none">
-                <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-1" style="font-size: 15px;">
-                    Empresas <img src="assets/img/feather-icons/chevron-down.svg" alt="Más opciones" style="width:16px; height:16px; color:#003698;">
+                <a href="#" class="text-decoration-none text-dark fw-bold d-flex align-items-center gap-1"
+                    style="font-size: 15px;">
+                    Empresas <img src="assets/img/feather-icons/chevron-down.svg" alt="Más opciones"
+                        style="width:16px; height:16px; color:#003698;">
                 </a>
             </div>
 
-            <button id="btn-menu-lateral" class="btn bg-white d-flex align-items-center gap-2 border-0 p-1 ms-auto ms-lg-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" style="transition: all 0.2s;">
-                <img src="./assets/img/feather-icons/menu.svg" alt="Menú" id="icon-menu" width="24" height="24" style="stroke: #000;">
-                <img src="./assets/img/feather-icons/x.svg" alt="Cerrar" id="icon-close" width="24" height="24" class="d-none" style="stroke: #000;">
+            <button id="btn-menu-lateral"
+                class="btn bg-white d-flex align-items-center gap-2 border-0 p-1 ms-auto ms-lg-0" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+                style="transition: all 0.2s;">
+                <img src="./assets/img/feather-icons/menu.svg" alt="Menú" id="icon-menu" width="24" height="24"
+                    style="stroke: #000;">
+                <img src="./assets/img/feather-icons/x.svg" alt="Cerrar" id="icon-close" width="24" height="24"
+                    class="d-none" style="stroke: #000;">
                 <span class="fw-bold text-dark d-none d-lg-block">Menú</span>
             </button>
 
             <a href="#" class="text-decoration-none text-dark d-none d-lg-block">Itaú beneficios</a>
-            
+
             <ul class="d-none d-lg-flex list-unstyled m-0 p-0 align-items-center gap-3 ms-auto">
                 <li><button href="#" class="btn btn-cliente text-decoration-none px-3 ">Hazte cliente</button></li>
                 <li><button class="btn btn-acceso fw-bold px-3 py-2 text-white">Acceso clientes</button></li>
@@ -72,9 +92,9 @@
         </nav>
     </header>
     <!-- FIN HEADER -->
-     <footer>
+    <footer>
         <section>
-            <div class="container">    
+            <div class="container">
                 <div class="row">
                     <div class="col-2">
                         <p>Descarga nuestra aplicación Itaú</p>
@@ -135,7 +155,9 @@
                 <div class="row">
                     <div class="col-9">
                         <span>
-                            Desubre: Plan Cuenta Corriente, Crédito de Consumo, Fondos Mutuos y APV. Infórmese sobre la garantía estatal de los depósitos en su banco o en www.cmfchile.cl © 2024 Banco Itaú Chile. Todos los derechos reservados. Av. Presidente Riesco 5537, Las Condes.
+                            Desubre: Plan Cuenta Corriente, Crédito de Consumo, Fondos Mutuos y APV. Infórmese sobre la
+                            garantía estatal de los depósitos en su banco o en www.cmfchile.cl © 2024 Banco Itaú Chile.
+                            Todos los derechos reservados. Av. Presidente Riesco 5537, Las Condes.
                         </span>
                     </div>
                     <ul>
@@ -148,10 +170,11 @@
                 </div>
             </div>
         </section>
-     </footer>
+    </footer>
     <!--Comienzo Footer-->
 
-    <div class="offcanvas offcanvas-start border-0 shadow-sm" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 350px;">
+    <div class="offcanvas offcanvas-start border-0 shadow-sm" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel" style="width: 350px;">
         <div class="offcanvas-header justify-content-end p-0">
             <button type="button" class="offcanvas-close-btn mt-2 me-2" data-bs-dismiss="offcanvas" aria-label="Close">
                 Cerrar <span aria-hidden="true" style="font-size: 1.5rem; line-height: 1;">&times;</span>
@@ -162,101 +185,123 @@
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/bar-chart-2.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/bar-chart-2.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Inversiones</span>
                         </div>
 
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/credit-card.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/credit-card.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Cuentas</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/smartphone.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/smartphone.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Pagos</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/pie-chart.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/pie-chart.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Financiamiento</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/globe.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/globe.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Comercio exterior</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/download.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/download.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Recaudación</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/briefcase.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/briefcase.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Corporate Finance</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/heart.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/heart.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Sostenibilidad</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/database.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/database.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Mesa de dinero</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/shield.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/shield.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Seguros</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
                 <li>
                     <a href="#" class="menu-lateral-item">
                         <div class="d-flex align-items-center">
-                            <img src="./assets/img/feather-icons/map.svg" alt="" class="menu-lateral-icon filter-orange">
+                            <img src="./assets/img/feather-icons/map.svg" alt=""
+                                class="menu-lateral-icon filter-orange">
                             <span>Bancos globales</span>
                         </div>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange">
                     </a>
                 </li>
             </ul>
@@ -265,25 +310,29 @@
                 <li class="mb-3 px-4">
                     <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark fw-bold">
                         <span>Itaú beneficios</span>
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange ms-auto">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange ms-auto">
                     </a>
                 </li>
                 <li class="mb-2 px-4">
                     <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                        <img src="assets/img/feather-icons/help-circle.svg" alt="Contáctanos" class="filter-orange" style="width:18px; height:18px;">
+                        <img src="assets/img/feather-icons/help-circle.svg" alt="Contáctanos" class="filter-orange"
+                            style="width:18px; height:18px;">
                         Contáctanos
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange ms-auto">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange ms-auto">
                     </a>
                 </li>
                 <li class="mb-2 px-4">
                     <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                        <img src="assets/img/feather-icons/map-pin.svg" alt="Sucursales" class="filter-orange" style="width:18px; height:18px;">
+                        <img src="assets/img/feather-icons/map-pin.svg" alt="Sucursales" class="filter-orange"
+                            style="width:18px; height:18px;">
                         Sucursales
-                        <img src="./assets/img/feather-icons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange ms-auto">
+                        <img src="./assets/img/feather-icons/chevron-right.svg" alt=""
+                            class="menu-lateral-arrow-icon filter-orange ms-auto">
                     </a>
                 </li>
             </ul>
-        </div>
         </div>
     </div>
 
@@ -292,19 +341,7 @@
         crossorigin="anonymous"></script>
     <script src="./assets/js/main.js"></script>
     <script>
-    function updateOffcanvasSide() {
-        const offcanvas = document.getElementById('offcanvasExample');
-        if (!offcanvas) return;
-        if (window.innerWidth < 992) {
-            offcanvas.classList.remove('offcanvas-start');
-            offcanvas.classList.add('offcanvas-end');
-        } else {
-            offcanvas.classList.remove('offcanvas-end');
-            offcanvas.classList.add('offcanvas-start');
-        }
-    }
-    window.addEventListener('resize', updateOffcanvasSide);
-    window.addEventListener('DOMContentLoaded', updateOffcanvasSide);
+
     </script>
 </body>
 
