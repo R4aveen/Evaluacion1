@@ -22,6 +22,8 @@ tmp/
 
 # Dependencias (no aplica en este módulo, pero buen hábito)
 node_modules/
+# quitando la carpeta de los iconos sobrantes de la nav, pero no quitando los que se usan pasandolos a headerIcons
+assets/img/feather-icons/
 
 # Builds
 dist/

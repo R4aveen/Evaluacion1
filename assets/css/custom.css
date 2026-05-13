@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 .pepito:hover{
     /*     
         1.- tiene que agrandar la imagen
@@ -6,18 +8,35 @@
     */
 }
 
+
+:root {
+    --color-primario-orange: #eb6f00;
+    --color-secundario-blue: #003698;
+    --color-blue-hover: #0035985c;
+    --bg-light: #faf7f5;
+    --bg-light-hover: #ede7e3;
+    --bg-gris: #4b4b4b;
+    --bg-sidebar-hover: #f8f9fa;
+    --text-dark: #212529;
+    --fuente-principal: 'Inter', sans-serif !important;
+}
+
+body {
+    font-family: var(--fuente-principal);
+}
+
 .btn-acceso{
-    background-color: #eb6f00 !important;
+    background-color: var(--color-primario-orange) !important;
 }
 
 .btn-cliente{
     background-color: white !important;
-    border: 2px solid #003698 !important;
-    color: #003698 !important;
+    border: 2px solid var(--color-secundario-blue) !important;
+    color: var(--color-secundario-blue) !important;
 }
 
 .btn-cliente:hover{
-    background-color: #0035985c !important;
+    background-color: var(--color-blue-hover) !important;
 }
 
 .menu-lateral-item {
@@ -26,22 +45,22 @@
     justify-content: space-between;
     padding: 1.25rem 2rem;
     text-decoration: none;
-    color: #212529;
+    color: var(--text-dark);
     font-weight: 600;
     transition: background-color 0.2s ease;
     font-size: 15px;
 }
 
 .menu-lateral-item:hover {
-    background-color: #f8f9fa;
-    color: #212529;
+    background-color: var(--bg-sidebar-hover);
+    color: var(--text-dark);
 }
 
 .menu-lateral-icon {
     width: 22px;
     height: 22px;
     margin-right: 1rem;
-    stroke: #eb6f00;
+    stroke: var(--color-primario-orange);
     fill: none;
     stroke-width: 1.5;
     stroke-linecap: round;
@@ -49,7 +68,7 @@
 }
 
 .offcanvas-close-btn {
-    color: #003698;
+    color: var(--color-secundario-blue);
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -75,7 +94,7 @@
 }
 
 .btn-menu-active {
-    background-color: #4b4b4b !important;
+    background-color: var(--bg-gris) !important;
 }
 
 .btn-menu-active #icon-close {
@@ -90,9 +109,9 @@
 hr.vertical {
   border: 0;
   margin: 0;
-  border-left: 5px solid blue;
+  border-left: 10px solid var(--color-secundario-blue)!important;
   
-  height: 50px;
+  height: 35px;
   float: left;
 }
 
@@ -105,10 +124,11 @@ hr.vertical {
     height: 100%;
     padding: 0 10px 0 10px;
     align-items: center !important;
+    transition: background-color 0.2s ease;
 }
 
 .item-hover:hover{
-    background-color: #ede7e3 !important;
+    background-color: var(--bg-light-hover) !important;
 }
 
 
