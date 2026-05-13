@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
  function updateOffcanvasSide() {
         const offcanvas = document.getElementById('offcanvasExample');
         if (!offcanvas) return;
-        if (window.innerWidth < 992) {
+        if (window.innerWidth < 991) {
             offcanvas.classList.remove('offcanvas-start');
             offcanvas.classList.add('offcanvas-end');
         } else {
