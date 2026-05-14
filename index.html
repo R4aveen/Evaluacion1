@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/custom.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <body>
 
     <!-- Header (Mas o menos esto ocupare creo, si hay confilctos lo arreglamos en el merge ) -->
@@ -253,6 +253,43 @@
         </div>
     </div>
     <!--FOOTER-->
+
+    <main class="container-fluid p-0">
+        <section class="vitrina-home">
+            <div class="swiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                <div class="position-relative w-100 h-100">
+                    <img src="https://images.itau.cl/v3/assets/.../Banners_SP_Vitrina_Empresas_Abril.webp" alt="Inversiones">
+                    <div class="container position-absolute top-50 start-0 translate-middle-y text-white z-3 ps-5">
+                    <h2 class="fw-bold display-5">¿Recibiste devolución? Invierte hoy</h2>
+                    <p class="fs-5">Contrata online un depósito a plazo y conoce tu rentabilidad.</p>
+                    <a href="#" class="btn btn-warning btn-lg fw-bold" style="background-color: #ec7000; border:none; color:white;">Hazte cliente</a>
+                    </div>
+                    <div class="position-absolute inset-0 w-100 h-100" style="background: rgba(0,0,0,0.3);"></div>
+                </div>
+                </div>
+
+                <div class="swiper-slide">
+                <div class="position-relative w-100 h-100">
+                    <img src="https://images.itau.cl/v3/assets/.../Empresas-01.webp" alt="Capital">
+                    <div class="container position-absolute top-50 start-0 translate-middle-y text-white z-3 ps-5">
+                    <h2 class="fw-bold display-5">Potencia tu negocio</h2>
+                    <p class="fs-5">Créditos 100% digital para tu empresa.</p>
+                    <a href="#" class="btn btn-warning btn-lg fw-bold" style="background-color: #ec7000; border:none; color:white;">Hazte cliente</a>
+                    </div>
+                    <div class="position-absolute inset-0 w-100 h-100" style="background: rgba(0,0,0,0.3);"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+        </section>
+        </main>
     <footer>
         <section>
             <div class="container">
@@ -348,6 +385,27 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    effect: 'fade',
+    grabCursor: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
 </body>
 
 </html>

@@ -18,6 +18,18 @@
   --bg-sidebar-hover: #f8f9fa;
   --text-dark: #212529;
   --fuente-principal: "Inter", sans-serif !important;
+
+  --swiper-theme-color: #ec7000;
+}
+
+.swiper {
+  width: 100%;
+  height: 500px;
+} 
+.swiper-slide img {
+   width: 100%;
+  height:
+  100%; object-fit: cover; 
 }
 
 body {
