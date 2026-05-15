@@ -33,3 +33,4 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', updateOffcanvasSide);
     window.addEventListener('DOMContentLoaded', updateOffcanvasSide);
 
+
