@@ -34,20 +34,3 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('DOMContentLoaded', updateOffcanvasSide);
 
 
-const swiper = new Swiper('.swiper', {
-    loop: true,
-    effect: 'fade',
-    grabCursor: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
