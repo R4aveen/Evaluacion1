@@ -499,91 +499,236 @@
 
     <!--FOOTER-->
     <footer style="background-color: #f7f7f7;">
-        <section class="pt-5 pb-4">
+        <!-- Desktop Footer -->
+        <section class="pt-5 pb-4 d-none d-lg-block">
             <div class="container">
                 <div class="row">
-                    <div class="col-2">
-                        <p class="footer-title">Descarga nuestra aplicación Itaú</p>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
+                    <div class="col-lg-2">
+                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Descarga nuestra aplicación Itaú</p>
+                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau" class="d-block mb-2">
                             <img src="./assets/img/footerIcons/app_store.svg" alt="App-Store" class="pepito">
                         </a>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
+                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau" class="d-block mb-2">
                             <img src="./assets/img/footerIcons/google_play.svg" alt="Google-Play" class="pepito">
                         </a>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
+                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau" class="d-block">
                             <img src="./assets/img/footerIcons/app_gallery.svg" alt="App-Gallery" class="pepito">
                         </a>
                     </div>
-                    <div class="col-2">
-                        <p class="footer-title">Productos</p>
-                        <ul class="list-unstyled m-0 align-items-center">
-                            <li><a class="text-decoration-none text-dark" href="#">Cuenta Corriente</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Financiamiento</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Cash Management</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Corporate Finance</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Tarjetas de crédito</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Mesa de Dinero</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Billetera Digital Itaú</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Pago QR Itaú</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Cuenta Corriente en Dólares</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Pago automático y en línea</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Abono de remuneraciones</a></li>
+                    <div class="col-lg-2">
+                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Productos</p>
+                        <ul class="list-unstyled m-0">
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Cuenta Corriente</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Financiamiento</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Cash Management</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Corporate Finance</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Tarjetas de crédito</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Mesa de Dinero</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Billetera Digital Itaú</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Pago QR Itaú</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Cuenta Corriente en Dólares</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Pago automático y en línea</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Abono de remuneraciones</a></li>
                         </ul>
                     </div>
-                    <div class="col-2">
-                        <p class="footer-title">Sobre Itaú</p>
-                        <ul class="list-unstyled m-0 align-items-center">
-                            <li><a class="text-decoration-none text-dark" href="#">Documentación normativa</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Institucional</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Trabaja en Itaú</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Bases legales</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Sostenibilidad</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Términos de uso y políticas de privacidad</a></li>
+                    <div class="col-lg-3">
+                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Sobre Itaú</p>
+                        <ul class="list-unstyled m-0 mb-4">
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Documentación normativa</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Institucional</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Trabaja en Itaú</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Bases legales</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Sostenibilidad</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Términos de uso y políticas de privacidad</a></li>
                         </ul>
-                            <p class="footer-title">Servicio al cliente</p>
-                        <ul class="list-unstyled m-0 align-items-center">
-                            <li><a class="text-decoration-none text-dark" href="#">Contáctanos</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Sucursales</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-2">
-                        <p class="footer-title">Infórmate</p>
-                        <ul class="list-unstyled m-0 align-items-center">
-                            <li><a class="text-decoration-none text-dark" href="#">Venta de bienes</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Investor Relations</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Itaú New York</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Itaú Miami</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Tarifas y contratos</a></li>
-                            <li><a class="text-decoration-none text-dark" href="#">Adjudicación Licitación Pública</a></li>
+                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Servicio al cliente</p>
+                        <ul class="list-unstyled m-0">
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Contáctanos</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Sucursales</a></li>
                         </ul>
                     </div>
-                    <div class="col-2">
-                        <p class="footer-title">¿Cómo podemos ayudarte?</p>
-                        <ul class="list-unstyled m-0 align-items-center">
-                            <li><a class="text-decoration-none text-dark" href="#">Si eres cliente del banco no dudes en comunicarte con nosotros:</a></li>
-                            <li><img src="assets/img/footerIcons/smartphone.svg" alt="Celular" class="filter-orange"><a class="text-decoration-none text-dark" href="#">+56226860888</a></li>
-                            <li><img src="assets/img/footerIcons/smartphone.svg" alt="Celular" class="filter-orange"><a class="text-decoration-none text-dark" href="#">600 686 0888</a></li>
+                    <div class="col-lg-2">
+                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Infórmate</p>
+                        <ul class="list-unstyled m-0">
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Venta de bienes</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Investor Relations</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Itaú New York</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Itaú Miami</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Tarifas y contratos</a></li>
+                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Adjudicación Licitación Pública</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">¿Cómo podemos ayudarte?</p>
+                        <p style="color: #666; font-size: 0.85rem;" class="mb-3">Si eres cliente del banco no dudes en comunicarte con nosotros:</p>
+                        <ul class="list-unstyled m-0">
+                            <li class="mb-2 d-flex align-items-center gap-2">
+                                <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
+                                <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">+56226860888</a>
+                            </li>
+                            <li class="mb-2 d-flex align-items-center gap-2">
+                                <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
+                                <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">600 686 0888</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="py-3">
-            <div class="row">
-                <div class="col-md-9 container-fluid-nav">
-                    <span>
-                        Desubre: Plan Cuenta Corriente, Crédito de Consumo, Fondos Mutuos y APV. Infórmese sobre la
-                        garantía estatal de los depósitos en su banco o en www.cmfchile.cl © 2024 Banco Itaú Chile.
-                        Todos los derechos reservados. Av. Presidente Riesco 5537, Las Condes.
-                    </span>
+        
+        <section class="py-3 d-none d-lg-block border-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-9">
+                        <span style="color: #666; font-size: 0.75rem;">
+                            Descubre: Plan Cuenta Corriente, Crédito de Consumo, Fondos Mutuos y APV. Infórmese sobre la
+                            garantía estatal de los depósitos en su banco o en www.cmfchile.cl © 2024 Banco Itaú Chile.
+                            Todos los derechos reservados. Av. Presidente Riesco 5537, Las Condes.
+                        </span>
+                    </div>
+                    <div class="col-lg-3 d-flex justify-content-end gap-3">
+                        <a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg" alt="Facebook" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg" alt="Twitter" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://cl.linkedin.com/company/itauchile"><img src="assets/img/footerIcons/linkedin.svg" alt="Linkedin" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg" alt="instagram" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.tiktok.com/@itauchile?lang=es"><img src="assets/img/footerIcons/smartphone.svg" alt="tiktok" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                    </div>
                 </div>
-                <ul class="col-md-3 list-unstyled m-0 d-flex gap-2">
-                    <li><a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg" alt="Facebook" class="filter-orange"></a></li>
-                    <li><a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg" alt="Twitter" class="filter-orange"></a></li>
-                    <li><a href="https://cl.linkedin.com/company/itauchile"><img src="assets/img/footerIcons/linkedin.svg" alt="Linkedin" class="filter-orange"></a></li>
-                    <li><a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg" alt="instagram" class="filter-orange"></a></li>
-                    <li><a href="https://www.tiktok.com/@itauchile?lang=es"><img src="assets/img/footerIcons/smartphone.svg" alt="tiktok" class="filter-orange"></a></li>
-                </ul>
+            </div>
+        </section>
+
+        <!-- Mobile Footer -->
+        <section class="d-block d-lg-none py-4">
+            <div class="container-fluid px-0">
+                <div class="accordion accordion-flush" id="accordionFooter">
+                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
+                        <h2 class="accordion-header" id="headingProductos">
+                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProductos" aria-expanded="false" aria-controls="collapseProductos" style="background-color: transparent; color: #333;">
+                                Productos
+                            </button>
+                        </h2>
+                        <div id="collapseProductos" class="accordion-collapse collapse" aria-labelledby="headingProductos" data-bs-parent="#accordionFooter">
+                            <div class="accordion-body py-2">
+                                <ul class="list-unstyled m-0 ps-3">
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Cuenta Corriente</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Financiamiento</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Cash Management</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Corporate Finance</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Tarjetas de crédito</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Mesa de Dinero</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Billetera Digital Itaú</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Pago QR Itaú</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Cuenta Corriente en Dólares</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Pago automático y en línea</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Abono de remuneraciones</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
+                        <h2 class="accordion-header" id="headingSobre">
+                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSobre" aria-expanded="false" aria-controls="collapseSobre" style="background-color: transparent; color: #333;">
+                                Sobre Itaú
+                            </button>
+                        </h2>
+                        <div id="collapseSobre" class="accordion-collapse collapse" aria-labelledby="headingSobre" data-bs-parent="#accordionFooter">
+                            <div class="accordion-body py-2">
+                                <ul class="list-unstyled m-0 ps-3">
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Documentación normativa</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Institucional</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Trabaja en Itaú</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Bases legales</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Sostenibilidad</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Términos de uso y políticas de privacidad</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
+                        <h2 class="accordion-header" id="headingServicio">
+                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseServicio" aria-expanded="false" aria-controls="collapseServicio" style="background-color: transparent; color: #333;">
+                                Servicio al cliente
+                            </button>
+                        </h2>
+                        <div id="collapseServicio" class="accordion-collapse collapse" aria-labelledby="headingServicio" data-bs-parent="#accordionFooter">
+                            <div class="accordion-body py-2">
+                                <ul class="list-unstyled m-0 ps-3">
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Contáctanos</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Sucursales</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
+                        <h2 class="accordion-header" id="headingInfo">
+                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo" style="background-color: transparent; color: #333;">
+                                Infórmate
+                            </button>
+                        </h2>
+                        <div id="collapseInfo" class="accordion-collapse collapse" aria-labelledby="headingInfo" data-bs-parent="#accordionFooter">
+                            <div class="accordion-body py-2">
+                                <ul class="list-unstyled m-0 ps-3">
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Venta de bienes</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Investor Relations</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Itaú New York</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Itaú Miami</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Tarifas y contratos</a></li>
+                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Adjudicación Licitación Pública</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center px-4 mt-5 mb-4">
+                    <p class="fw-bold mb-2" style="color: #333; font-size: 1rem;">¿Cómo podemos ayudarte?</p>
+                    <p style="color: #666; font-size: 0.85rem;" class="mb-3">Si eres cliente del banco no dudes en comunicarte con nosotros:</p>
+                    <div class="d-flex justify-content-center gap-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
+                            <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">+56226860888</a>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
+                            <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">600 686 0888</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center px-4 mb-4">
+                    <p class="fw-bold mb-3" style="color: #333; font-size: 0.9rem;">Descarga nuestra aplicación Itaú</p>
+                    <div class="d-flex justify-content-center gap-2 flex-wrap">
+                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
+                            <img src="./assets/img/footerIcons/app_store.svg" alt="App-Store" style="height: 32px;">
+                        </a>
+                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
+                            <img src="./assets/img/footerIcons/google_play.svg" alt="Google-Play" style="height: 32px;">
+                        </a>
+                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
+                            <img src="./assets/img/footerIcons/app_gallery.svg" alt="App-Gallery" style="height: 32px;">
+                        </a>
+                    </div>
+                </div>
+
+                <hr style="border-color: #ddd;">
+
+                <div class="text-center px-4 mb-4 mt-4">
+                    <div class="d-flex justify-content-center gap-3 mb-4">
+                        <a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg" alt="Facebook" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg" alt="Twitter" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://cl.linkedin.com/company/itauchile"><img src="assets/img/footerIcons/linkedin.svg" alt="Linkedin" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg" alt="instagram" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.tiktok.com/@itauchile?lang=es"><img src="assets/img/footerIcons/smartphone.svg" alt="tiktok" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                    </div>
+                    <p style="color: #666; font-size: 0.7rem; line-height: 1.4;">
+                        Descubre: Plan Cuenta Corriente, Crédito de Consumo, Fondos Mutuos y APV. Infórmese sobre la garantía estatal de los depósitos en su banco o en www.cmfchile.cl © 2024 Banco Itaú Chile. Todos los derechos reservados. Av. Presidente Riesco 5537, Las Condes.
+                    </p>
+                </div>
+
+                <div class="px-3 pb-2 mt-4 d-flex gap-2">
+                    <button class="btn w-50 fw-bold border" style="color: #003698; border-color: #003698 !important; background-color: white;">Hazte cliente</button>
+                    <button class="btn w-50 fw-bold text-white" style="background-color: #ec7000;">Acceso clientes</button>
+                </div>
             </div>
         </section>
     </footer>
