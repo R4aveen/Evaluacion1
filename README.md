@@ -1,4 +1,4 @@
-# [Nombre del Proyecto]
+# [IPSS - EVALUACION 1]
 > Proyecto del Módulo 1 — HTML + CSS + JS · Diplomado Fullstack IPSS
 ## Integrantes
 - [Bastian Rojas]
