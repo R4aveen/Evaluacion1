@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Itaú Chile | Soluciones Financieras para tu Empresa</title>
-    <link rel="stylesheet" href="assets/css/custom.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <body>
 
@@ -89,7 +89,9 @@
             </ul>
         </nav>
     </header>
+    
     <!-- FIN HEADER -->
+
     <div class="offcanvas offcanvas-start border-0 shadow-sm" tabindex="-1" id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel" style="width: 350px;">
         <div class="offcanvas-header justify-content-end p-0">
@@ -98,171 +100,21 @@
             </button>
         </div>
         <div class="offcanvas-body p-0 mt-2 pb-4">
-            <ul class="list-unstyled m-0">
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/bar-chart-2.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Inversiones</span>
-                        </div>
+            <ul id="menu-principal-container" class="list-unstyled m-0"></ul>
 
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/credit-card.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Cuentas</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/smartphone.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Pagos</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/pie-chart.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Financiamiento</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/globe.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Comercio exterior</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/download.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Recaudación</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/briefcase.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Corporate Finance</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/heart.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Sostenibilidad</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/database.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Mesa de dinero</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/shield.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Seguros</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="menu-lateral-item">
-                        <div class="d-flex align-items-center">
-                            <img src="./assets/img/headerIcons/map.svg" alt=""
-                                class="menu-lateral-icon filter-orange">
-                            <span>Bancos globales</span>
-                        </div>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange">
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="list-unstyled m-0 mt-3 d-lg-none border-top pt-3">
-                <li class="mb-3 px-4">
-                    <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark fw-bold">
-                        <span>Itaú beneficios</span>
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange ms-auto">
-                    </a>
-                </li>
-                <li class="mb-2 px-4">
-                    <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                        <img src="assets/img/headerIcons/help-circle.svg" alt="Contáctanos" class="filter-orange"
-                            style="width:18px; height:18px;">
-                        Contáctanos
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange ms-auto">
-                    </a>
-                </li>
-                <li class="mb-2 px-4">
-                    <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
-                        <img src="assets/img/headerIcons/map-pin.svg" alt="Sucursales" class="filter-orange"
-                            style="width:18px; height:18px;">
-                        Sucursales
-                        <img src="./assets/img/headerIcons/chevron-right.svg" alt=""
-                            class="menu-lateral-arrow-icon filter-orange ms-auto">
-                    </a>
-                </li>
-            </ul>
+            <ul id="menu-secundario-container" class="list-unstyled m-0 mt-3 d-lg-none border-top pt-3"></ul>
         </div>
     </div>
     
     <main class="container-fluid p-0 mt-0">
         <section class="vitrina-home">
-          <div class="swiper hero-swiper min-vh-100">
-            <div class="swiper-wrapper" id="swiper-container"></div>
-    
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-</section>
+            <div class="swiper hero-swiper min-vh-100">
+                <div class="swiper-wrapper" id="swiper-container"></div>    
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
 
         <section class="py-5" style="background-color: #ffffff;">
             <div class="container-fluid text-center mt-4 mb-5">
@@ -271,84 +123,9 @@
             
             <div class="container-fluid px-4 px-md-5">
                 <div class="swiper cards-swiper mx-md-4" style="height: auto; padding-bottom: 3.5rem;">
-                    <div class="swiper-wrapper">
-                        
-                        <div class="swiper-slide">
-                            <div class="position-relative overflow-hidden" style="border-radius: 16px; height: 420px;">
-                                <img src="assets/img/hero/solucion_financiamiento.webp" alt="solucion_financiamiento" loading="lazy" class="w-100 h-100 object-fit-cover">
-                                <div class="position-absolute bottom-0 w-100 p-3">
-                                    <div class="p-4 d-flex flex-column justify-content-between" style="background-color: rgba(30, 30, 30, 0.8); border-radius: 12px; min-height: 170px;">
-                                        <div>
-                                            <h5 class="text-white fw-bold mb-2">Conoce las soluciones de financiamiento</h5>
-                                            <p class="text-white mb-0" style="font-size: 0.95rem; line-height: 1.3;">Te ayudamos a desarrollar tus proyectos.</p>
-                                        </div>
-                                        <button class="btn w-100 fw-bold py-2 mt-3" style="background-color: #ffffff; color: #001C4B; border-radius: 6px; font-size: 0.95rem;">Conocer opciones</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="position-relative overflow-hidden" style="border-radius: 16px; height: 420px;">
-                                <img src="assets/img/hero/cuenta_corriente.webp" alt="cuenta_corriente" loading="lazy" class="w-100 h-100 object-fit-cover">
-                                <div class="position-absolute bottom-0 w-100 p-3">
-                                    <div class="p-4 d-flex flex-column justify-content-between" style="background-color: rgba(30, 30, 30, 0.8); border-radius: 12px; min-height: 170px;">
-                                        <div>
-                                            <h5 class="text-white fw-bold mb-2">Cuenta Corriente</h5>
-                                            <p class="text-white mb-0" style="font-size: 0.95rem; line-height: 1.3;">Haz crecer tu negocio con una cuenta diseñada para ti.</p>
-                                        </div>
-                                        <button class="btn w-100 fw-bold py-2 mt-3" style="background-color: #ffffff; color: #001C4B; border-radius: 6px; font-size: 0.95rem;">Conocer más</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="position-relative overflow-hidden" style="border-radius: 12px; height: 420px;">
-                                <img src="assets/img/hero/comercio_internacional.png" alt="comercio_internacional" loading="lazy" class="w-100 h-100 object-fit-cover">
-                                <div class="position-absolute bottom-0 w-100 p-2">
-                                    <div class="p-4 d-flex flex-column justify-content-between" style="background-color: rgba(60, 60, 60, 0.85); border-radius: 8px; min-height: 160px; backdrop-filter: blur(2px);">
-                                        <div>
-                                            <h5 class="text-white fw-bold mb-2">Comercio internacional con Portal Comex</h5>
-                                            <p class="text-white mb-0" style="font-size: 0.9rem; line-height: 1.3;">Gestiona pagos, cobranzas, financiamiento y más.</p>
-                                        </div>
-                                        <button class="btn btn-light w-100 fw-bold text-dark py-2 mt-3" style="border-radius: 6px; font-size: 0.95rem;">Conocer más</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="position-relative overflow-hidden" style="border-radius: 12px; height: 420px;">
-                                <img src="assets/img/hero/leasing_factoring.webp" alt="leasing_factoring" loading="lazy" class="w-100 h-100 object-fit-cover">
-                                <div class="position-absolute bottom-0 w-100 p-2">
-                                    <div class="p-4 d-flex flex-column justify-content-between" style="background-color: rgba(60, 60, 60, 0.85); border-radius: 8px; min-height: 160px; backdrop-filter: blur(2px);">
-                                        <div>
-                                            <h5 class="text-white fw-bold mb-2">Potencia tu negocio con Leasing</h5>
-                                            <p class="text-white mb-0" style="font-size: 0.9rem; line-height: 1.3;">Revisa el catálogo Itaú y accede a ofertas exclusivas.</p>
-                                        </div>
-                                        <button class="btn btn-light w-100 fw-bold text-dark py-2 mt-3" style="border-radius: 6px; font-size: 0.95rem;">Revisar catálogo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="position-relative overflow-hidden" style="border-radius: 12px; height: 420px;">
-                                <img src="assets/img/hero/factoring_digital.png" alt="factoring_digital" loading="lazy" class="w-100 h-100 object-fit-cover">
-                                <div class="position-absolute bottom-0 w-100 p-2">
-                                    <div class="p-4 d-flex flex-column justify-content-between" style="background-color: rgba(60, 60, 60, 0.85); border-radius: 8px; min-height: 160px; backdrop-filter: blur(2px);">
-                                        <div>
-                                            <h5 class="text-white fw-bold mb-2">Impulsa tu negocio con Factoring digital</h5>
-                                            <p class="text-white mb-0" style="font-size: 0.9rem; line-height: 1.3;">Con abono en línea, recibe tus fondos en 10 minutos.</p>
-                                        </div>
-                                        <button class="btn btn-light w-100 fw-bold text-dark py-2 mt-3" style="border-radius: 6px; font-size: 0.95rem;">Conocer más</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    
+                    <div class="swiper-wrapper" id="cards-swiper-container"></div>
+                    
                     <div class="swiper-pagination position-absolute bottom-0"></div>
                 </div>
             </div>
@@ -502,77 +279,7 @@
         <!-- Desktop Footer -->
         <section class="pt-5 pb-4 d-none d-lg-block">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Descarga nuestra aplicación Itaú</p>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau" class="d-block mb-2">
-                            <img src="./assets/img/footerIcons/app_store.svg" alt="App-Store" class="pepito">
-                        </a>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau" class="d-block mb-2">
-                            <img src="./assets/img/footerIcons/google_play.svg" alt="Google-Play" class="pepito">
-                        </a>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau" class="d-block">
-                            <img src="./assets/img/footerIcons/app_gallery.svg" alt="App-Gallery" class="pepito">
-                        </a>
-                    </div>
-                    <div class="col-lg-2">
-                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Productos</p>
-                        <ul class="list-unstyled m-0">
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Cuenta Corriente</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Financiamiento</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Cash Management</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Corporate Finance</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Tarjetas de crédito</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Mesa de Dinero</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Billetera Digital Itaú</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Pago QR Itaú</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Cuenta Corriente en Dólares</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Pago automático y en línea</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Abono de remuneraciones</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3">
-                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Sobre Itaú</p>
-                        <ul class="list-unstyled m-0 mb-4">
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Documentación normativa</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Institucional</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Trabaja en Itaú</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Bases legales</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Sostenibilidad</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Términos de uso y políticas de privacidad</a></li>
-                        </ul>
-                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Servicio al cliente</p>
-                        <ul class="list-unstyled m-0">
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Contáctanos</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Sucursales</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2">
-                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">Infórmate</p>
-                        <ul class="list-unstyled m-0">
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Venta de bienes</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Investor Relations</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Itaú New York</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Itaú Miami</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Tarifas y contratos</a></li>
-                            <li class="mb-2"><a class="text-decoration-none" style="color: #666; font-size: 0.85rem;" href="#">Adjudicación Licitación Pública</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3">
-                        <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">¿Cómo podemos ayudarte?</p>
-                        <p style="color: #666; font-size: 0.85rem;" class="mb-3">Si eres cliente del banco no dudes en comunicarte con nosotros:</p>
-                        <ul class="list-unstyled m-0">
-                            <li class="mb-2 d-flex align-items-center gap-2">
-                                <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
-                                <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">+56226860888</a>
-                            </li>
-                            <li class="mb-2 d-flex align-items-center gap-2">
-                                <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
-                                <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">600 686 0888</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="row" id="footer-desktop-container"></div>
             </div>
         </section>
         
@@ -599,137 +306,7 @@
 
         <!-- Mobile Footer -->
         <section class="d-block d-lg-none py-4">
-            <div class="container-fluid px-0">
-                <div class="accordion accordion-flush" id="accordionFooter">
-                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
-                        <h2 class="accordion-header" id="headingProductos">
-                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProductos" aria-expanded="false" aria-controls="collapseProductos" style="background-color: transparent; color: #333;">
-                                Productos
-                            </button>
-                        </h2>
-                        <div id="collapseProductos" class="accordion-collapse collapse" aria-labelledby="headingProductos" data-bs-parent="#accordionFooter">
-                            <div class="accordion-body py-2">
-                                <ul class="list-unstyled m-0 ps-3">
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Cuenta Corriente</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Financiamiento</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Cash Management</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Corporate Finance</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Tarjetas de crédito</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Mesa de Dinero</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Billetera Digital Itaú</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Pago QR Itaú</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Cuenta Corriente en Dólares</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Pago automático y en línea</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Abono de remuneraciones</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
-                        <h2 class="accordion-header" id="headingSobre">
-                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSobre" aria-expanded="false" aria-controls="collapseSobre" style="background-color: transparent; color: #333;">
-                                Sobre Itaú
-                            </button>
-                        </h2>
-                        <div id="collapseSobre" class="accordion-collapse collapse" aria-labelledby="headingSobre" data-bs-parent="#accordionFooter">
-                            <div class="accordion-body py-2">
-                                <ul class="list-unstyled m-0 ps-3">
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Documentación normativa</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Institucional</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Trabaja en Itaú</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Bases legales</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Sostenibilidad</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Términos de uso y políticas de privacidad</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
-                        <h2 class="accordion-header" id="headingServicio">
-                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseServicio" aria-expanded="false" aria-controls="collapseServicio" style="background-color: transparent; color: #333;">
-                                Servicio al cliente
-                            </button>
-                        </h2>
-                        <div id="collapseServicio" class="accordion-collapse collapse" aria-labelledby="headingServicio" data-bs-parent="#accordionFooter">
-                            <div class="accordion-body py-2">
-                                <ul class="list-unstyled m-0 ps-3">
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Contáctanos</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Sucursales</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="background-color: transparent; border-color: #eee;">
-                        <h2 class="accordion-header" id="headingInfo">
-                            <button class="accordion-button collapsed fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="false" aria-controls="collapseInfo" style="background-color: transparent; color: #333;">
-                                Infórmate
-                            </button>
-                        </h2>
-                        <div id="collapseInfo" class="accordion-collapse collapse" aria-labelledby="headingInfo" data-bs-parent="#accordionFooter">
-                            <div class="accordion-body py-2">
-                                <ul class="list-unstyled m-0 ps-3">
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Venta de bienes</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Investor Relations</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Itaú New York</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Itaú Miami</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Tarifas y contratos</a></li>
-                                    <li class="mb-3"><a class="text-decoration-none" style="color: #666; font-size: 0.9rem;" href="#">Adjudicación Licitación Pública</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center px-4 mt-5 mb-4">
-                    <p class="fw-bold mb-2" style="color: #333; font-size: 1rem;">¿Cómo podemos ayudarte?</p>
-                    <p style="color: #666; font-size: 0.85rem;" class="mb-3">Si eres cliente del banco no dudes en comunicarte con nosotros:</p>
-                    <div class="d-flex justify-content-center gap-4">
-                        <div class="d-flex align-items-center gap-2">
-                            <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
-                            <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">+56226860888</a>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
-                            <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">600 686 0888</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center px-4 mb-4">
-                    <p class="fw-bold mb-3" style="color: #333; font-size: 0.9rem;">Descarga nuestra aplicación Itaú</p>
-                    <div class="d-flex justify-content-center gap-2 flex-wrap">
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
-                            <img src="./assets/img/footerIcons/app_store.svg" alt="App-Store" style="height: 32px;">
-                        </a>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
-                            <img src="./assets/img/footerIcons/google_play.svg" alt="Google-Play" style="height: 32px;">
-                        </a>
-                        <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
-                            <img src="./assets/img/footerIcons/app_gallery.svg" alt="App-Gallery" style="height: 32px;">
-                        </a>
-                    </div>
-                </div>
-
-                <hr style="border-color: #ddd;">
-
-                <div class="text-center px-4 mb-4 mt-4">
-                    <div class="d-flex justify-content-center gap-3 mb-4">
-                        <a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg" alt="Facebook" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg" alt="Twitter" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://cl.linkedin.com/company/itauchile"><img src="assets/img/footerIcons/linkedin.svg" alt="Linkedin" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg" alt="instagram" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://www.tiktok.com/@itauchile?lang=es"><img src="assets/img/footerIcons/smartphone.svg" alt="tiktok" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                    </div>
-                    <p style="color: #666; font-size: 0.7rem; line-height: 1.4;">
-                        Descubre: Plan Cuenta Corriente, Crédito de Consumo, Fondos Mutuos y APV. Infórmese sobre la garantía estatal de los depósitos en su banco o en www.cmfchile.cl © 2024 Banco Itaú Chile. Todos los derechos reservados. Av. Presidente Riesco 5537, Las Condes.
-                    </p>
-                </div>
-
-                <div class="px-3 pb-2 mt-4 d-flex gap-2">
-                    <button class="btn w-50 fw-bold border" style="color: #003698; border-color: #003698 !important; background-color: white;">Hazte cliente</button>
-                    <button class="btn w-50 fw-bold text-white" style="background-color: #ec7000;">Acceso clientes</button>
-                </div>
-            </div>
+            <div class="container-fluid px-0" id="footer-mobile-container"></div>
         </section>
     </footer>
     <!--FIN FOOTER-->
@@ -738,6 +315,10 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/primaryCards.js"></script>
+    <script src="./assets/js/footerDesktop.js"></script>
+    <script src="./assets/js/footerMobile.js"></script>
+    <script src="./assets/js/menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/swipper.js"></script>
 
