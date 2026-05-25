@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-        const cardsData = [
+    const cardsData = [
         {
             img: 'solucion_financiamiento.webp',
             title: 'Conoce las soluciones de financiamiento',
@@ -34,8 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             text: 'Con abono en línea, recibe tus fondos en 10 minutos.',
             btnText: 'Conocer más',
             variant: 'secondary'
-        },
-
+        }
     ];
 
     const cardsContainer = document.getElementById('cards-swiper-container');
@@ -57,17 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 : 'border-radius: 6px; font-size: 0.95rem;';
 
             return `
-                <div class="swiper-slide">
-                    <div class="position-relative overflow-hidden" style="border-radius: ${outerRadius}; height: 420px;">
+                <div class="custom-card-slide">
+                    <div class="position-relative overflow-hidden w-100 h-100" style="border-radius: ${outerRadius}; height: 420px;">
                         <img src="assets/img/hero/${card.img}" alt="${card.title}" loading="lazy" class="w-100 h-100 object-fit-cover">
                         <div class="position-absolute bottom-0 w-100 ${paddingClasses}">
-                        <div class="p-4 d-flex flex-column justify-content-between" style="${overlayStyles}">
-                            <div>
-                                <h5 class="text-white fw-bold mb-2">${card.title}</h5>
-                                <p class="text-white mb-0" style="font-size: ${isPrimary ? '0.95rem' : '0.9rem'}; line-height: 1.3;">${card.text}</p>
+                            <div class="p-4 d-flex flex-column justify-content-between" style="${overlayStyles}">
+                                <div>
+                                    <h5 class="text-white fw-bold mb-2">${card.title}</h5>
+                                    <p class="text-white mb-0" style="font-size: ${isPrimary ? '0.95rem' : '0.9rem'}; line-height: 1.3;">${card.text}</p>
+                                </div>
+                                <button class="${btnClasses}" style="${btnStyles}">${card.btnText}</button>
                             </div>
-                            <button class="${btnClasses}" style="${btnStyles}">${card.btnText}</button>
-                        </div>
                         </div>
                     </div>
                 </div>
