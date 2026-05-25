@@ -371,3 +371,21 @@ hr.vertical {
   margin-right: 15px;
   margin-bottom: 5px;
 }
+
+.custom-tabs .nav-link {
+    color: #212529;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    border: none;
+}
+
+.custom-tabs .nav-link.active {
+    color: var(--color-primario-orange);
+    font-weight: 700;
+    background-color: #f8f9fa;
+}
+
+.custom-tabs .nav-link span {
+    color: inherit;
+    font-weight: 300;
+}
