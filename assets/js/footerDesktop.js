@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${footerData.ayuda.phones.map(phone => `
                         <li class="mb-2 d-flex align-items-center gap-2">
                             <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
-                            <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="#">${phone}</a>
+                            <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="tel:${phone}">${phone}</a>
                         </li>
                     `).join('')}
                 </ul>

@@ -45,14 +45,6 @@ if (track) {
       </div>
     </div>
   `).join('');
-
-  setInterval(() => {
-    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
-      track.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
-    }
-  }, 5000);
 }
 
 function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelector = null, paginationSelector = null) {
@@ -197,7 +189,7 @@ function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelect
     const stopAutoplay = () => clearInterval(autoplayInterval);
 
     startAutoplay(); 
-    
+
     container.addEventListener('mouseenter', stopAutoplay);
     container.addEventListener('mouseleave', startAutoplay);
     container.addEventListener('touchstart', stopAutoplay, { passive: true });
