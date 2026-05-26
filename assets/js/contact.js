@@ -14,24 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 <hr class="text-muted mt-2 mb-4" style="opacity: 0.15;">
                 <form id="contactForm" novalidate>
                     <div class="mb-3">
-                        <input type="text" class="form-control form-control-sm" id="contactName" placeholder="Nombre *" required>
+                        <input type="text" class="form-control form-control-sm" id="contactName" placeholder="Nombre *" minlength="3" maxlength="30" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$" required>
                         <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control form-control-sm" id="contactLastName" placeholder="Apellido paterno *" required>
+                        <input type="text" class="form-control form-control-sm" id="contactLastName" placeholder="Apellido paterno *" minlength="3" maxlength="30" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$" required>
                         <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control form-control-sm" id="contactSurName" placeholder="Apellido materno *" required>
+                        <input type="text" class="form-control form-control-sm" id="contactSurName" placeholder="Apellido materno *" minlength="3" maxlength="30" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$" required>
                         <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control form-control-sm" id="contactRut" placeholder="RUT *" required>
-                        <div class="form-text mt-1" style="font-size: 0.75rem; color: #666;">Ej: 12.345.678-9</div>
+                        <input type="text" class="form-control form-control-sm" id="contactRut" placeholder="RUT *" pattern="^[0-9]{1,2}\.?[0-9]{3}\.?[0-9]{3}-[0-9Kk]{1}$" required>
+                        <div class="form-text mt-1" style="font-size: 0.75rem; color: #666;">Ej: 12345678-9</div>
                         <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control form-control-sm" id="contactAddress" placeholder="Dirección *" required>
+                        <input type="text" class="form-control form-control-sm" id="contactAddress" placeholder="Dirección *" minlength="5" maxlength="100" required>
                         <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                     </div>
                     
@@ -44,14 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <div class="col-8">
                             <label class="form-label mb-1 d-block">&nbsp;</label>
-                            <input type="tel" class="form-control form-control-sm" id="contactPhone" placeholder="Número *" required>
+                            <input type="tel" class="form-control form-control-sm" id="contactPhone" placeholder="Número *" minlength="9" maxlength="9" pattern="^[0-9]{9}$" required>
                             <div class="form-text mt-1" style="font-size: 0.75rem; color: #666;">Ej: 998234566</div>
                             <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                         </div>
                     </div>
 
                     <div class="mb-3 mt-4">
-                        <input type="email" class="form-control form-control-sm" id="contactEmail" placeholder="Email *" required>
+                        <input type="email" class="form-control form-control-sm" id="contactEmail" placeholder="Email *" minlength="5" maxlength="100" required>
                         <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                     </div>
 
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
 
                     <div class="mb-3">
-                        <textarea class="form-control form-control-sm" id="contactComments" rows="4" placeholder="Comentarios *" required maxlength="500"></textarea>
+                        <textarea class="form-control form-control-sm" id="contactComments" rows="4" placeholder="Comentarios *" minlength="10" maxlength="500" required></textarea>
                         <div class="form-text mt-1" style="font-size: 0.75rem; color: #999;">Agrega un mensaje de hasta 500 caracteres.</div>
                         <div class="invalid-feedback" style="font-size: 0.75rem;">Completa este campo</div>
                     </div>
@@ -152,6 +152,56 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const validarRut = (rutCompleto) => {
+        rutCompleto = rutCompleto.replace(/\./g, '').replace(/-/g, '');
+        if (rutCompleto.length < 2) return false;
+
+        const cuerpo = rutCompleto.slice(0, -1);
+        const dv = rutCompleto.slice(-1).toUpperCase();
+
+        let suma = 0;
+        let multiplo = 2;
+        for (let i = cuerpo.length - 1; i >= 0; i--) {
+            suma += parseInt(cuerpo.charAt(i)) * multiplo;
+            multiplo = (multiplo < 7) ? multiplo + 1 : 2;
+        }
+        const dvEsperado = 11 - (suma % 11);
+        const dvCalculado = (dvEsperado === 11) ? '0' : (dvEsperado === 10) ? 'K' : dvEsperado.toString();
+
+        return dv === dvCalculado;
+    };
+
+    const updateFeedback = (input) => {
+        const feedback = input.parentElement.querySelector('.invalid-feedback');
+        if (!feedback) return;
+
+        if (input.validity.valueMissing) {
+            feedback.textContent = "Completa este campo";
+            return;
+        }
+
+        if (input.validationMessage === 'Demasiado corto' || input.validity.tooShort) {
+            feedback.textContent = `Mínimo ${input.getAttribute('minlength')} caracteres`;
+            return;
+        }
+
+        if (input.id === 'contactRut') {
+            if (input.validationMessage === 'Rut invalido') {
+                feedback.textContent = "RUT inválido (Ej: 12.345.678-9)";
+            } else if (input.validity.patternMismatch) {
+                feedback.textContent = "Formato inválido (Ej: 12.345.678-9)";
+            }
+        } else if (input.id === 'contactPhone' && input.validity.patternMismatch) {
+            feedback.textContent = "Debe ingresar 9 números enteros";
+        } else if (['contactName', 'contactLastName', 'contactSurName'].includes(input.id) && input.validity.patternMismatch) {
+            feedback.textContent = "Solo se permiten letras";
+        } else if (input.validity.typeMismatch && input.type === 'email') {
+            feedback.textContent = "Correo electrónico inválido";
+        } else if (!input.checkValidity()) {
+            feedback.textContent = "Formato inválido";
+        }
+    };
+
     const checkFormValidity = () => {
         if (form.checkValidity()) {
             submitBtn.removeAttribute('disabled');
@@ -165,10 +215,52 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     form.querySelectorAll('input, select, textarea').forEach(input => {
-        input.addEventListener('input', () => {
+        const validateInput = () => {
+            if (input.id === 'contactPhone') {
+                input.value = input.value.replace(/[^0-9]/g, '');
+            } else if (['contactName', 'contactLastName', 'contactSurName'].includes(input.id)) {
+                input.value = input.value.replace(/[^A-Za-zñÑáéíóúÁÉÍÓÚ ]/g, '');
+            }
+
+            input.setCustomValidity('');
+
+            const minLength = input.getAttribute('minlength');
+            if (minLength && input.value.length > 0 && input.value.length < parseInt(minLength)) {
+                input.setCustomValidity('Demasiado corto');
+            } else if (input.id === 'contactRut' && input.value.length > 0) {
+                if (!validarRut(input.value)) {
+                    input.setCustomValidity('Rut invalido');
+                }
+            }
+
+            updateFeedback(input);
+
+            if (!input.checkValidity()) {
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+            } else {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+            }
+        };
+
+        input.addEventListener('blur', () => {
+            validateInput();
             checkFormValidity();
         });
-        input.addEventListener('change', checkFormValidity);
+
+        input.addEventListener('input', () => {
+            validateInput();
+            if (input.value.trim() === '' && !input.classList.contains('is-touched')) {
+                input.classList.remove('is-invalid', 'is-valid');
+            }
+            checkFormValidity();
+        });
+
+        input.addEventListener('change', () => {
+            validateInput();
+            checkFormValidity();
+        });
     });
 
     form.addEventListener('submit', (e) => {
