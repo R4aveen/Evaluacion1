@@ -133,16 +133,13 @@ function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelect
         }, 150); 
     });
 
-    // ==========================================
-    // NUEVA FÍSICA DE ARRASTRE SUAVE Y "SNAP"
-    // ==========================================
     let isDown = false;
     let startX;
     let scrollLeft;
 
     const start = (e) => {
         isDown = true;
-        container.style.scrollBehavior = 'auto'; // Para que siga al dedo instantáneamente
+        container.style.scrollBehavior = 'auto';
         container.style.cursor = 'grabbing';
         startX = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
         scrollLeft = container.scrollLeft;
@@ -152,34 +149,30 @@ function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelect
         if (!isDown) return;
         e.preventDefault();
         const x = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
-        // Relación 1:1 para que no se sienta brusco ni acelerado
         const walk = (x - startX) * 1; 
         container.scrollLeft = scrollLeft - walk;
     };
 
     const end = () => {
-        if (!isDown) return; // Si no estaba arrastrando, no hacemos nada
+        if (!isDown) return;
         isDown = false;
         container.style.cursor = 'default';
-        container.style.scrollBehavior = 'smooth'; // Devolvemos la suavidad
+        container.style.scrollBehavior = 'smooth';
         
-        // LA MAGIA DEL ACOMODO SUAVE (Snap):
         const stepSize = getStepSize();
         if (stepSize) {
             const currentScroll = container.scrollLeft;
             const nearestIndex = Math.round(currentScroll / stepSize);
-            // Cuando sueltas el click/dedo, se desliza solito a la tarjeta más cercana
             container.scrollTo({ left: nearestIndex * stepSize, behavior: 'smooth' });
         }
     };
 
     container.addEventListener('mousedown', start);
     container.addEventListener('mousemove', move);
-    // Usamos 'end' tanto para soltar como para cuando el mouse se sale del contenedor
+    
     container.addEventListener('mouseup', end);
     container.addEventListener('mouseleave', end);
     
-    // Lo mismo para el celular
     container.addEventListener('touchstart', start, { passive: true });
     container.addEventListener('touchmove', move, { passive: false });
     container.addEventListener('touchend', end);
