@@ -33,7 +33,7 @@ const track = document.getElementById('hero-slider-track');
 
 if (track) {
   track.innerHTML = bannerData.map(slide => `
-    <div class="custom-slide">
+    <div class="custom-slide w-100 flex-shrink-0">
       <div class="position-relative w-100 h-100">
         <img src="${slide.img}" alt="${slide.alt}" class="hero-img">
         <div class="position-absolute top-0 start-0 w-100 h-100 z-1" style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;"></div>
@@ -47,15 +47,119 @@ if (track) {
   `).join('');
 }
 
+function initFadeHero(containerSelector, nextBtnSelector, prevBtnSelector, delay = 5000) {
+    const track = document.querySelector(containerSelector);
+    if (!track) return;
+    const slides = Array.from(track.querySelectorAll(':scope > div'));
+    if (slides.length <= 1) return;
+
+    track.style.display = 'block';
+    track.style.position = 'relative';
+    track.style.userSelect = 'none';
+    track.style.webkitUserSelect = 'none';
+
+    track.querySelectorAll('img, a, button').forEach(el => el.setAttribute('draggable', 'false'));
+
+    slides.forEach((slide, i) => {
+        slide.style.position = 'absolute';
+        slide.style.scrollSnapType = 'none';
+        slide.style.top = '0';
+        slide.style.left = '0';
+        slide.style.width = '100%';
+        slide.style.height = '100%';
+        slide.style.opacity = i === 0 ? '1' : '0';
+        slide.style.transition = 'opacity 0.8s ease-in-out';
+        slide.style.zIndex = i === 0 ? '2' : '1';
+        slide.style.pointerEvents = i === 0 ? 'auto' : 'none';
+    });
+
+    let currentIdx = 0;
+    let autoplayInterval;
+
+    const changeSlide = (newIdx) => {
+        slides[currentIdx].style.opacity = '0';
+        slides[currentIdx].style.zIndex = '1';
+        slides[currentIdx].style.pointerEvents = 'none';
+
+        currentIdx = newIdx;
+
+        slides[currentIdx].style.opacity = '1';
+        slides[currentIdx].style.zIndex = '2';
+        slides[currentIdx].style.pointerEvents = 'auto';
+    };
+
+    const nextSlide = () => changeSlide((currentIdx + 1) % slides.length);
+    const prevSlide = () => changeSlide((currentIdx - 1 + slides.length) % slides.length);
+
+    const startAutoplay = () => {
+        clearInterval(autoplayInterval);
+        autoplayInterval = setInterval(nextSlide, delay);
+    };
+
+    startAutoplay();
+
+    if (nextBtnSelector) {
+        const nextBtn = document.querySelector(nextBtnSelector);
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+    }
+    if (prevBtnSelector) {
+        const prevBtn = document.querySelector(prevBtnSelector);
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+    }
+
+    let startX = 0;
+    let isDragging = false;
+
+    const dragStart = (e) => {
+        isDragging = true;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        clearInterval(autoplayInterval);
+    };
+
+    const dragEnd = (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.type.includes('mouse') ? e.pageX : e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        startAutoplay();
+    };
+
+    track.addEventListener('mousedown', dragStart);
+    track.addEventListener('mouseup', dragEnd);
+    track.addEventListener('mouseleave', () => {
+        if (isDragging) {
+            isDragging = false;
+            startAutoplay();
+        }
+    });
+
+    track.addEventListener('touchstart', dragStart, { passive: true });
+    track.addEventListener('touchend', dragEnd);
+}
+
 function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelector = null, paginationSelector = null) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
     container.style.userSelect = 'none';
     container.style.webkitUserSelect = 'none';
     container.querySelectorAll('img').forEach(img => img.setAttribute('draggable', 'false'));
     container.querySelectorAll('a, button').forEach(el => el.setAttribute('draggable', 'false'));
-
+    container.style.scrollSnapType = 'none';
+    
     container.style.display = 'flex';
     container.style.flexWrap = 'nowrap';
     container.style.overflowX = 'auto';
@@ -87,7 +191,7 @@ function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelect
 
     const getStepSize = () => {
         if (originalChildren.length === 0) return 0;
-        const cardWidth = originalChildren[0].offsetWidth;
+        const cardWidth = originalChildren[0].getBoundingClientRect().width;
         const gap = parseFloat(window.getComputedStyle(container).gap) || 0;
         return cardWidth + gap;
     };
@@ -104,6 +208,8 @@ function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelect
     container.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
+            if (isDown) return;
+            
             if (totalOriginals <= 1) return;
             const stepSize = getStepSize();
             if (!stepSize) return;
@@ -122,12 +228,8 @@ function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelect
                 container.offsetHeight; 
                 container.style.scrollBehavior = 'smooth';
             }
-        }, 150); 
+        }, 250);
     });
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
 
     const start = (e) => {
         isDown = true;
@@ -245,7 +347,7 @@ function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelect
 }
 
 window.addEventListener('load', () => {
-    initSwiperLite('#hero-slider-track', '#next-slide', '#prev-slide');
+    initFadeHero('#hero-slider-track', '#next-slide', '#prev-slide');
     initSwiperLite('#business-slider', null, null, '#business-pagination');
     initSwiperLite('#finance-slider', null, null, '#finance-pagination');
     initSwiperLite('#cards-swiper-container', null, null, '#cards-pagination');
