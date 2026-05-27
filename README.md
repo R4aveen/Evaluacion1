@@ -1,41 +1,68 @@
-# [Nombre del Proyecto]
+### Banco Itaú Empresas - Clon (Evaluación 1)
+
 > Proyecto del Módulo 1 — HTML + CSS + JS · Diplomado Fullstack IPSS
+
 ## Integrantes
-- [Bastian Rojas]
-- [Fransisco San Juan]
+
+* Bastián Rojas
+* Francisco San Juan
+
 ## Descripción
-Proyecto del modulo 1, pagina web del banco Itaú Empresas (https://www.itau.cl/empresas) para empresas, se evalua el uso de HTML semantico, CSS y Bootstrap, ademas de JavaScript con minimo 2 addlisteners, ademas de al menos 1 evento personalizado y una configuracion de paleta root, en este proyecto tambien se evalua el manejo de interfaces responsivas (mobile first, desktop next) y el uso de git y github (https://github.com/R4aveen/Evaluacion1/).
+
+Clon de la interfaz de Banco Itaú Empresas enfocaado en la fidelidad visual, adaptabilidad responsiva (Mobile First) y optimización de rendimiento eliminando dependencias externas de terceros.
+
+Puntos clave evaluados:
+
+* Estructura limpia utilizando HTML5 semántico.
+* Estilos estructurados mediante Bootstrap 5 combinados con CSS personalizado e inyección de variables globales en el `:root`.
+* Interactividad avanzada con JavaScript Vanilla, implementando un motor de carrusel propio (`swipper.js`) con físicas de arrastre, soporte táctil, autoplay y transiciones fluidas de loop infinito.
+
 ## Demo
-- Sitio desplegado: [URL de GitHub Pages si aplica]
-- Capturas:
-![Hero](docs/hero.png)
+
+* Sitio desplegado: [Enlace a GitHub Pages]
+* Repositorio oficial: [R4aveen/Evaluacion1](https://github.com/R4aveen/Evaluacion1/)
+
 ## Cómo correr localmente
 
 ```bash
-git clone [https://github.com/R4aveen/Evaluacion1.git]
-cd [Evaluacion1]
-# Abrir index.html en el navegador
-# O con un servidor:
+# Clonar el proyecto
+git clone https://github.com/R4aveen/Evaluacion1.git
+
+# Acceder al directorio
+cd Evaluacion1
+
+# Instalar extension "Live Server" (vsc o fork de vsc)
+
+# O Levantar un servidor local con Python
 python3 -m http.server 8000
+
 ```
+
 ## Estructura del proyecto
-```
+
+```text
 .
 ├── assets/
 │   ├── css/
 │   │   └── custom.css
 │   ├── js/
-│   │   └── main.js
+│   │   ├── main.js
+│   │   ├── menu.js
+│   │   ├── primaryCards.js
+│   │   ├── swipper.js
+│   │   ├── footerDesktop.js
+│   │   └── footerMobile.js
 │   └── img/
-│       ├── logo-empresa-56x56.svg
-│       └── ...
+├── contact.html
 ├── index.html
 ├── .gitignore
 └── README.md
+
 ```
-## Stack
-- HTML5 semántico
-- Bootstrap 5 (vía CDN)
-- CSS custom propio (paleta, tipografía, ajustes)
-- JavaScript vanilla
-Apéndice D — Component
+
+## Stack Tecnológico
+
+* HTML5 Semántico
+* Bootstrap 5 (CDN)
+* CSS Custom (Manejo de Flexbox, CSS Grid y funciones funcionales como Clamp)
+* JavaScript Vanilla (Arquitectura modular libre de librerías externas)

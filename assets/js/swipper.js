@@ -1,76 +1,357 @@
 const bannerData = [
-  {
-    img: "assets/img/hero/Banners_SP_Vitrina_Empresas_Abril.jpeg",
-    title: "¿Recibiste devolución?<br>Invierte hoy",
-    text: "Contrata online un depósito a plazo y conoce tu<br>rentabilidad desde el inicio.",
-    link: "#",
-    alt: "Inversiones"
+  { 
+    img: "assets/img/hero/Banners_SP_Vitrina_Empresas_Abril.jpeg", 
+    title: "¿Recibiste devolución?<br>Invierte hoy", 
+    text: "Contrata online un depósito a plazo y conoce tu<br>rentabilidad desde el inicio.", 
+    link: "#", 
+    alt: "Inversiones" 
   },
-  {
-    img: "assets/img/hero/Bnn_Vitrina_Empresas_Febrero_1920x1080.jpeg",
-    title: "Activa tu pago de impuestos<br>con Itaú",
-    text: "Mantén tu empresa al día desde un solo lugar, 100% digital.",
-    link: "#",
-    alt: "Inversiones"
+  { 
+    img: "assets/img/hero/Bnn_Vitrina_Empresas_Febrero_1920x1080.jpeg", 
+    title: "Activa tu pago de impuestos<br>con Itaú", 
+    text: "Mantén tu empresa al día desde un solo lugar, 100% digital.", 
+    link: "#", 
+    alt: "Inversiones" 
   },
-  {
-    img: "assets/img/hero/Empresas-01.jpeg",
-    title: "Potencia tu negocio con<br>capital de trabajo",
-    text: "Créditos 100% digital y con la seguridad que nos caracteriza.",
-    link: "#",
-    alt: "Inversiones"
+  { 
+    img: "assets/img/hero/Empresas-01.jpeg", 
+    title: "Potencia tu negocio con<br>capital de trabajo", 
+    text: "Créditos 100% digital y con la seguridad que nos caracteriza.", 
+    link: "#", 
+    alt: "Inversiones" 
   },
-  {
-    img: "assets/img/hero/02_Vitrina_web_-_Empresas_05_1920x1080_Handshake.jpeg",
-    title: "Potencia tu negocio",
-    text: "Créditos 100% digital para tu empresa.",
-    link: "#",
-    alt: "Capital"
+  { 
+    img: "assets/img/hero/02_Vitrina_web_-_Empresas_05_1920x1080_Handshake.jpeg", 
+    title: "Potencia tu negocio", 
+    text: "Créditos 100% digital para tu empresa.", 
+    link: "#", 
+    alt: "Capital" 
   }
 ];
 
 const track = document.getElementById('hero-slider-track');
 
-track.innerHTML = bannerData.map(slide => `
-  <div class="custom-slide">
-    <div class="position-relative w-100 h-100">
-      <img src="${slide.img}" alt="${slide.alt}" class="hero-img">
-      <div class="position-absolute top-0 start-0 w-100 h-100 z-1" 
-           style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;">
-      </div>
-      <div class="position-absolute top-50 start-0 translate-middle-y text-white z-3" style="padding-left: 8%; padding-right: 5%;">
-        <span class="d-block hero-title">${slide.title}</span>
-        <p class="mt-3 mb-4 hero-text">${slide.text}</p>
-        <a href="${slide.link}" class="btn fw-bold text-white px-4 py-2 shadow-sm" 
-           style="background-color: #001C4B; border-radius: 6px;">
-           Hazte cliente
-        </a>
+if (track) {
+  track.innerHTML = bannerData.map(slide => `
+    <div class="custom-slide w-100 flex-shrink-0">
+      <div class="position-relative w-100 h-100">
+        <img src="${slide.img}" alt="${slide.alt}" class="hero-img">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-1" style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;"></div>
+        <div class="position-absolute top-50 start-0 translate-middle-y text-white z-3" style="padding-left: 8%; padding-right: 5%;">
+          <span class="d-block hero-title">${slide.title}</span>
+          <p class="mt-3 mb-4 hero-text">${slide.text}</p>
+          <a href="${slide.link}" class="btn fw-bold text-white px-4 py-2 shadow-sm" style="background-color: #001C4B; border-radius: 6px;">Hazte cliente</a>
+        </div>
       </div>
     </div>
-  </div>
-`).join('');
+  `).join('');
+}
 
-const nextBtn = document.getElementById('next-slide');
-const prevBtn = document.getElementById('prev-slide');
+function initFadeHero(containerSelector, nextBtnSelector, prevBtnSelector, delay = 5000) {
+    const track = document.querySelector(containerSelector);
+    if (!track) return;
+    const slides = Array.from(track.querySelectorAll(':scope > div'));
+    if (slides.length <= 1) return;
 
-nextBtn.addEventListener('click', () => {
-  track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+    track.style.display = 'block';
+    track.style.position = 'relative';
+    track.style.userSelect = 'none';
+    track.style.webkitUserSelect = 'none';
+
+    track.querySelectorAll('img, a, button').forEach(el => el.setAttribute('draggable', 'false'));
+
+    slides.forEach((slide, i) => {
+        slide.style.position = 'absolute';
+        slide.style.scrollSnapType = 'none';
+        slide.style.top = '0';
+        slide.style.left = '0';
+        slide.style.width = '100%';
+        slide.style.height = '100%';
+        slide.style.opacity = i === 0 ? '1' : '0';
+        slide.style.transition = 'opacity 0.8s ease-in-out';
+        slide.style.zIndex = i === 0 ? '2' : '1';
+        slide.style.pointerEvents = i === 0 ? 'auto' : 'none';
+    });
+
+    let currentIdx = 0;
+    let autoplayInterval;
+
+    const changeSlide = (newIdx) => {
+        slides[currentIdx].style.opacity = '0';
+        slides[currentIdx].style.zIndex = '1';
+        slides[currentIdx].style.pointerEvents = 'none';
+
+        currentIdx = newIdx;
+
+        slides[currentIdx].style.opacity = '1';
+        slides[currentIdx].style.zIndex = '2';
+        slides[currentIdx].style.pointerEvents = 'auto';
+    };
+
+    const nextSlide = () => changeSlide((currentIdx + 1) % slides.length);
+    const prevSlide = () => changeSlide((currentIdx - 1 + slides.length) % slides.length);
+
+    const startAutoplay = () => {
+        clearInterval(autoplayInterval);
+        autoplayInterval = setInterval(nextSlide, delay);
+    };
+
+    startAutoplay();
+
+    if (nextBtnSelector) {
+        const nextBtn = document.querySelector(nextBtnSelector);
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+    }
+    if (prevBtnSelector) {
+        const prevBtn = document.querySelector(prevBtnSelector);
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+    }
+
+    let startX = 0;
+    let isDragging = false;
+
+    const dragStart = (e) => {
+        isDragging = true;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        clearInterval(autoplayInterval);
+    };
+
+    const dragEnd = (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.type.includes('mouse') ? e.pageX : e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        startAutoplay();
+    };
+
+    track.addEventListener('mousedown', dragStart);
+    track.addEventListener('mouseup', dragEnd);
+    track.addEventListener('mouseleave', () => {
+        if (isDragging) {
+            isDragging = false;
+            startAutoplay();
+        }
+    });
+
+    track.addEventListener('touchstart', dragStart, { passive: true });
+    track.addEventListener('touchend', dragEnd);
+}
+
+function initSwiperLite(containerSelector, nextBtnSelector = null, prevBtnSelector = null, paginationSelector = null) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.style.userSelect = 'none';
+    container.style.webkitUserSelect = 'none';
+    container.querySelectorAll('img').forEach(img => img.setAttribute('draggable', 'false'));
+    container.querySelectorAll('a, button').forEach(el => el.setAttribute('draggable', 'false'));
+    container.style.scrollSnapType = 'none';
+    
+    container.style.display = 'flex';
+    container.style.flexWrap = 'nowrap';
+    container.style.overflowX = 'auto';
+    container.style.scrollBehavior = 'smooth';
+    container.style.scrollbarWidth = 'none'; 
+    container.style.msOverflowStyle = 'none'; 
+    
+    const originalChildren = Array.from(container.querySelectorAll(':scope > div'));
+    const totalOriginals = originalChildren.length;
+    originalChildren.forEach(child => child.style.flex = '0 0 auto');
+
+    if (container.scrollWidth <= container.clientWidth + 10) {
+        container.style.overflowX = 'hidden';
+        container.style.cursor = 'default';
+        if (paginationSelector) {
+            const pag = document.querySelector(paginationSelector);
+            if (pag) pag.style.display = 'none';
+        }
+        return; 
+    }
+
+    if (totalOriginals > 1) {
+        originalChildren.forEach(child => container.appendChild(child.cloneNode(true)));
+        originalChildren.slice().reverse().forEach(child => container.prepend(child.cloneNode(true)));
+    }
+
+    const allChildren = Array.from(container.querySelectorAll(':scope > div'));
+    allChildren.forEach(child => child.style.flex = '0 0 auto');
+
+    const getStepSize = () => {
+        if (originalChildren.length === 0) return 0;
+        const cardWidth = originalChildren[0].getBoundingClientRect().width;
+        const gap = parseFloat(window.getComputedStyle(container).gap) || 0;
+        return cardWidth + gap;
+    };
+
+    setTimeout(() => {
+        if (totalOriginals > 1) {
+            container.style.scrollBehavior = 'auto'; 
+            container.scrollLeft = getStepSize() * totalOriginals; 
+            container.style.scrollBehavior = 'smooth'; 
+        }
+    }, 50);
+
+    let scrollTimeout;
+    container.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            if (isDown) return;
+            
+            if (totalOriginals <= 1) return;
+            const stepSize = getStepSize();
+            if (!stepSize) return;
+            
+            const currentIdx = Math.round(container.scrollLeft / stepSize);
+            
+            if (currentIdx >= totalOriginals * 2) {
+                container.style.scrollBehavior = 'auto';
+                container.scrollLeft = (currentIdx - totalOriginals) * stepSize;
+                container.offsetHeight; 
+                container.style.scrollBehavior = 'smooth';
+            } 
+            else if (currentIdx < totalOriginals) {
+                container.style.scrollBehavior = 'auto';
+                container.scrollLeft = (currentIdx + totalOriginals) * stepSize;
+                container.offsetHeight; 
+                container.style.scrollBehavior = 'smooth';
+            }
+        }, 250);
+    });
+
+    const start = (e) => {
+        isDown = true;
+        container.style.scrollBehavior = 'auto';
+        container.style.cursor = 'grabbing';
+        startX = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+    };
+
+    const move = (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
+        const walk = (x - startX) * 1; 
+        container.scrollLeft = scrollLeft - walk;
+    };
+
+    const end = () => {
+        if (!isDown) return;
+        isDown = false;
+        container.style.cursor = 'default';
+        container.style.scrollBehavior = 'smooth';
+        
+        const stepSize = getStepSize();
+        if (stepSize) {
+            const currentScroll = container.scrollLeft;
+            const nearestIndex = Math.round(currentScroll / stepSize);
+            container.scrollTo({ left: nearestIndex * stepSize, behavior: 'smooth' });
+        }
+    };
+
+    container.addEventListener('mousedown', start);
+    container.addEventListener('mousemove', move);
+    
+    container.addEventListener('mouseup', end);
+    container.addEventListener('mouseleave', end);
+    
+    container.addEventListener('touchstart', start, { passive: true });
+    container.addEventListener('touchmove', move, { passive: false });
+    container.addEventListener('touchend', end);
+
+    if (nextBtnSelector) {
+        const nextBtn = document.querySelector(nextBtnSelector);
+        if (nextBtn) nextBtn.addEventListener('click', () => container.scrollBy({ left: getStepSize(), behavior: 'smooth' }));
+    }
+    if (prevBtnSelector) {
+        const prevBtn = document.querySelector(prevBtnSelector);
+        if (prevBtn) prevBtn.addEventListener('click', () => container.scrollBy({ left: -getStepSize(), behavior: 'smooth' }));
+    }
+
+    let autoplayInterval;
+    const startAutoplay = () => {
+        if (totalOriginals > 1) {
+            autoplayInterval = setInterval(() => {
+                container.scrollBy({ left: getStepSize(), behavior: 'smooth' });
+            }, 5000);
+        }
+    };
+    const stopAutoplay = () => clearInterval(autoplayInterval);
+
+    startAutoplay(); 
+
+    container.addEventListener('mouseenter', stopAutoplay);
+    container.addEventListener('mouseleave', startAutoplay);
+    container.addEventListener('touchstart', stopAutoplay, { passive: true });
+    container.addEventListener('touchend', startAutoplay);
+
+    if (paginationSelector && totalOriginals > 1) {
+        const pagContainer = document.querySelector(paginationSelector);
+        if (pagContainer) {
+            pagContainer.innerHTML = '';
+            originalChildren.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.style.cursor = 'pointer';
+                dot.style.transition = 'all 0.3s ease';
+                dot.style.height = '10px';
+                if (i === 0) {
+                    dot.style.width = '28px';
+                    dot.style.backgroundColor = '#ec7000';
+                    dot.style.borderRadius = '8px';
+                } else {
+                    dot.style.width = '10px';
+                    dot.style.backgroundColor = '#d1d1d1';
+                    dot.style.borderRadius = '50%';
+                }
+                dot.addEventListener('click', () => {
+                    container.scrollTo({ left: (totalOriginals + i) * getStepSize(), behavior: 'smooth' });
+                });
+                pagContainer.appendChild(dot);
+            });
+
+            container.addEventListener('scroll', () => {
+                const stepSize = getStepSize();
+                if (!stepSize) return;
+                
+                let rawIndex = Math.round(container.scrollLeft / stepSize);
+                let realIndex = (rawIndex - totalOriginals) % totalOriginals;
+                if (realIndex < 0) realIndex += totalOriginals;
+
+                const dots = pagContainer.querySelectorAll('span');
+                dots.forEach((dot, i) => {
+                    if (i === realIndex) {
+                        dot.style.width = '28px';
+                        dot.style.backgroundColor = '#ec7000';
+                        dot.style.borderRadius = '8px';
+                    } else {
+                        dot.style.width = '10px';
+                        dot.style.backgroundColor = '#d1d1d1';
+                        dot.style.borderRadius = '50%';
+                    }
+                });
+            });
+        }
+    }
+}
+
+window.addEventListener('load', () => {
+    initFadeHero('#hero-slider-track', '#next-slide', '#prev-slide');
+    initSwiperLite('#business-slider', null, null, '#business-pagination');
+    initSwiperLite('#finance-slider', null, null, '#finance-pagination');
+    initSwiperLite('#cards-swiper-container', null, null, '#cards-pagination');
 });
-
-prevBtn.addEventListener('click', () => {
-  track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
-});
-
-setInterval(() => {
-  if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
-    track.scrollTo({ left: 0, behavior: 'smooth' });
-  } else {
-    track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
-  }
-}, 5000);
-
-
-
 
 
 // const heroSwiper = new Swiper('.hero-swiper', {
