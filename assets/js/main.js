@@ -1,4 +1,35 @@
+import { fetchComunas } from './api/comunas.js';
+import { renderSelectComunas, renderTablaComunas } from './api/render.js';
+
+async function inicializarFiltros() {
+    const select = document.getElementById('comunas-select');
+    const tablaContenedor = document.getElementById('tabla-comunas-contenedor');
+    
+    if (select) {
+        select.innerHTML = '<option value="">Cargando comunas...</option>';
+        select.disabled = true;
+    }
+
+    if (tablaContenedor) {
+        tablaContenedor.innerHTML = '<div class="spinner-border text-warning" role="status"><span class="visually-hidden">Cargando...</span></div><p class="mt-2">Cargando datos...</p>';
+    }
+
+    if (select || tablaContenedor) {
+        const comunas = await fetchComunas();
+
+        if (select) {
+            renderSelectComunas(comunas);
+            select.disabled = false;
+        }
+
+        if (tablaContenedor) {
+            renderTablaComunas(comunas);
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+    inicializarFiltros();
     const offcanvasElement = document.getElementById('offcanvasExample');
     const btnMenu = document.getElementById('btn-menu-lateral');
     const iconMenu = document.getElementById('icon-menu');
