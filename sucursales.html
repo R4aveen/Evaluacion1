@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sucursales | Banco Itaú Chile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
+
 <body>
     <header class="w-100">
         <div class="container-fluid-nav w-100 d-none d-lg-flex justify-content-center"
@@ -21,19 +23,56 @@
                             style="font-size: 13px;">Personas</a>
                     </li>
                     <li class="h-100 d-flex">
-                        <a href="index.html" class="text-decoration-none text-black px-3 d-flex align-items-center h-100"
+                        <a href="index.html"
+                            class="text-decoration-none text-black px-3 d-flex align-items-center h-100"
                             style="background-color: #eee8e4; font-size: 13px;">Empresas</a>
                     </li>
                 </ul>
 
                 <ul class="d-flex list-unstyled m-0 p-0 align-items-center gap-3 mx-5">
-                    <li class="d-flex align-items-center gap-1 item-hover">
+                    <li class="d-flex align-items-center gap-1 item-hover position-relative" id="acc-menu-container">
                         <img src="assets/img/headerIcons/activity.svg" alt="Accesibilidad"
                             class="menu-lateral-arrow-icon filter-orange">
-                        <button class="btn btn-sm text-dark d-flex align-items-center gap-1"
+                        <button id="btn-accesibilidad-toggle"
+                            class="btn btn-sm text-dark d-flex align-items-center gap-1"
                             style="font-size: 13px; padding: 2px 8px;">Accesibilidad <img
                                 src="assets/img/headerIcons/chevron-down.svg" alt="Más opciones"
                                 style="width:14px; height:14px; color:#eb6f00;"></button>
+
+                        <div id="acc-dropdwon" class="acc-dropdwon d-none">
+                            <div class="acc-grid">
+                                <button class="acc-btn" id="btn-increase-font" title="Aumentar texto">
+                                    <span class="acc-icon"><span class="fw-bold fs-5">A+</span></span>
+                                    <span class="acc-text">Aumentar texto</span>
+                                </button>
+                                <button class="acc-btn" id="btn-decrease-font" title="Disminuir texto">
+                                    <span class="acc-icon"><span class="fw-bold fs-5">A&minus;</span></span>
+                                    <span class="acc-text">Disminuir texto</span>
+                                </button>
+                                <button class="acc-btn" id="btn-dark-mode" title="Modo oscuro">
+                                    <span class="acc-icon border-0">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="acc-text">Modo oscuro</span>
+                                </button>
+                                <button class="acc-btn active-reset" id="btn-reset-acc" title="Restablecer">
+                                    <span class="acc-icon border-0 mb-1">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+                                            <path d="M21 3v5h-5"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="acc-text">Restablecer</span>
+                                </button>
+                            </div>
+                        </div>
                     </li>
                     <li class="d-flex align-items-center gap-1 item-hover">
                         <img src="assets/img/headerIcons/help-circle.svg" alt="Contáctanos"
@@ -88,13 +127,14 @@
         <div class="offcanvas offcanvas-start border-0 shadow-sm" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel" style="width: 350px;">
             <div class="offcanvas-header justify-content-end p-0">
-                <button type="button" class="offcanvas-close-btn mt-2 me-2" data-bs-dismiss="offcanvas" aria-label="Close">
+                <button type="button" class="offcanvas-close-btn mt-2 me-2" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
                     Cerrar <span aria-hidden="true" style="font-size: 1.5rem; line-height: 1;">&times;</span>
                 </button>
             </div>
             <div class="offcanvas-body p-0 mt-2 pb-4">
                 <ul id="menu-principal-container" class="list-unstyled m-0"></ul>
-    
+
                 <ul id="menu-secundario-container" class="list-unstyled m-0 mt-3 d-lg-none border-top pt-3"></ul>
             </div>
         </div>
@@ -105,40 +145,56 @@
             <div class="container h-100 position-relative py-5">
                 <div class="row h-100 align-items-center py-4">
                     <div class="col-lg-6 z-2 py-4">
-                        <span class="badge text-dark d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 mb-3 border bg-light shadow-sm" style="font-weight: 500;">
-                            <img src="assets/img/contact/icons/home.svg" alt="" aria-hidden="true" class="menu-lateral-arrow-icon filter-orange" style="width: 16px;"> Sucursales
+                        <span
+                            class="badge text-dark d-inline-flex align-items-center gap-2 px-3 py-2 rounded-3 mb-3 border bg-light shadow-sm"
+                            style="font-weight: 500;">
+                            <img src="assets/img/contact/icons/home.svg" alt="" aria-hidden="true"
+                                class="menu-lateral-arrow-icon filter-orange" style="width: 16px;"> Sucursales
                         </span>
-                        <h1 class="display-4 fw-bold mb-3" style="color: #212529; letter-spacing: -1px;">Nuestras sucursales</h1>
-                        <p class="fs-5 text-secondary" style="font-weight: 300;">Sabemos que en contingencia, estar informado es clave.</p>
+                        <h1 class="display-4 fw-bold mb-3" style="color: #212529; letter-spacing: -1px;">Nuestras
+                            sucursales</h1>
+                        <p class="fs-5 text-secondary" style="font-weight: 300;">Sabemos que en contingencia, estar
+                            informado es clave.</p>
                     </div>
                 </div>
             </div>
-            <img src="assets/img/sucursal/hero_sucursales.png" class="position-absolute bottom-0 end-0 d-none d-lg-block" style="height: 100%; max-height: 400px; object-fit: contain; z-index: 1; padding-right: 5%;" alt="">
+            <img src="assets/img/sucursal/hero_sucursales.png"
+                class="position-absolute bottom-0 end-0 d-none d-lg-block"
+                style="height: 100%; max-height: 400px; object-fit: contain; z-index: 1; padding-right: 5%;" alt="">
         </section>
 
         <section class="py-5" style="background-color: #f4fbff; min-height: 600px;">
-            <div class="container bg-white rounded-4 shadow-sm p-4 p-md-5" style="margin-top: -60px; position: relative; z-index: 3;">
+            <div class="container bg-white rounded-4 shadow-sm p-4 p-md-5"
+                style="margin-top: -60px; position: relative; z-index: 3;">
                 <h2 class="fw-bold mb-2 fs-3" style="color: #212529;">Encuentra tu sucursal Itaú</h2>
-                <p class="text-secondary mb-5" style="font-size: 15px;">Considera que el horario de atención se extiende de 09:00 a 14:00 hrs</p>
+                <p class="text-secondary mb-5" style="font-size: 15px;">Considera que el horario de atención se extiende
+                    de 09:00 a 14:00 hrs</p>
 
                 <div class="row align-items-center mb-4">
                     <div class="col-md-4">
                         <div class="form-floating custom-floating-select">
-                            <select class="form-select border-light-subtle shadow-none" id="comunas-select" aria-label="Selecciona comuna">
+                            <select class="form-select border-light-subtle shadow-none" id="comunas-select"
+                                aria-label="Selecciona comuna">
                                 <option value="" selected>Todas las comunas</option>
                             </select>
-                            <label for="comunas-select" class="text-secondary" style="font-size: 14px; font-weight: 600;">Selecciona comuna</label>
+                            <label for="comunas-select" class="text-secondary"
+                                style="font-size: 14px; font-weight: 600;">Selecciona comuna</label>
                         </div>
                     </div>
                     <div class="col-md-8 d-flex justify-content-md-end align-items-center mt-4 mt-md-0 gap-4">
-                        <span class="fw-bold fs-6 text-dark" style="font-size: 14px !important;">Estado de sucursales:</span>
+                        <span class="fw-bold fs-6 text-dark" style="font-size: 14px !important;">Estado de
+                            sucursales:</span>
                         <div class="form-check form-check-inline m-0 d-flex align-items-center gap-2">
-                            <input class="form-check-input form-check-input-orange m-0" type="radio" name="estadoSucursal" id="estadoAbiertas" value="Abierta" checked>
-                            <label class="form-check-label text-secondary" style="font-size: 14px;" for="estadoAbiertas">Abiertas</label>
+                            <input class="form-check-input form-check-input-orange m-0" type="radio"
+                                name="estadoSucursal" id="estadoAbiertas" value="Abierta" checked>
+                            <label class="form-check-label text-secondary" style="font-size: 14px;"
+                                for="estadoAbiertas">Abiertas</label>
                         </div>
                         <div class="form-check form-check-inline m-0 d-flex align-items-center gap-2">
-                            <input class="form-check-input form-check-input-orange m-0" type="radio" name="estadoSucursal" id="estadoCerradas" value="Cerrada">
-                            <label class="form-check-label text-secondary" style="font-size: 14px;" for="estadoCerradas">Cerradas</label>
+                            <input class="form-check-input form-check-input-orange m-0" type="radio"
+                                name="estadoSucursal" id="estadoCerradas" value="Cerrada">
+                            <label class="form-check-label text-secondary" style="font-size: 14px;"
+                                for="estadoCerradas">Cerradas</label>
                         </div>
                     </div>
                 </div>
@@ -147,36 +203,47 @@
                     <table class="table table-striped table-hover align-middle w-100" style="min-width: 800px;">
                         <thead class="table-light">
                             <tr>
-                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary" style="font-size: 14px; width: 25%;">Sucursal</th>
-                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary" style="font-size: 14px; width: 20%;">Región</th>
-                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary" style="font-size: 14px; width: 15%;">Comuna</th>
-                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary" style="font-size: 14px; width: 30%;">Dirección</th>
-                                <th scope="col" class="py-3 px-3 rounded-end text-center fw-semibold text-secondary" style="font-size: 14px; width: 10%;">Estado</th>
+                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary"
+                                    style="font-size: 14px; width: 25%;">Sucursal</th>
+                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary"
+                                    style="font-size: 14px; width: 20%;">Región</th>
+                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary"
+                                    style="font-size: 14px; width: 15%;">Comuna</th>
+                                <th scope="col" class="py-3 px-3 fw-semibold text-secondary"
+                                    style="font-size: 14px; width: 30%;">Dirección</th>
+                                <th scope="col" class="py-3 px-3 rounded-end text-center fw-semibold text-secondary"
+                                    style="font-size: 14px; width: 10%;">Estado</th>
                             </tr>
                         </thead>
                         <tbody id="tabla-comunas-contenedor">
                         </tbody>
                     </table>
                 </div>
-                
-                <div class="d-flex justify-content-center mt-4 pt-4 border-top border-light-subtle d-none" id="pagination-wrapper">
-                    <div class="pagination-controls d-flex align-items-center gap-3 border border-light-subtle rounded-3 px-3 py-1 bg-white">
-                        <button class="btn btn-sm btn-link text-decoration-none text-secondary px-2 fs-6 fw-bold" id="btn-prev" disabled>&lt;</button>
-                        <span class="text-secondary" style="font-size: 14px;">Página <span class="bg-light px-3 py-1 rounded mx-1 text-dark border border-light-subtle" id="current-page">1</span> de <span id="total-pages" class="mx-1">7</span></span>
-                        <button class="btn btn-sm btn-link text-decoration-none px-2 fs-6 fw-bold" id="btn-next" style="color: #ea6f00;">&gt;</button>
+
+                <div class="d-flex justify-content-center mt-4 pt-4 border-top border-light-subtle d-none"
+                    id="pagination-wrapper">
+                    <div
+                        class="pagination-controls d-flex align-items-center gap-3 border border-light-subtle rounded-3 px-3 py-1 bg-white">
+                        <button class="btn btn-sm btn-link text-decoration-none text-secondary px-2 fs-6 fw-bold"
+                            id="btn-prev" disabled>&lt;</button>
+                        <span class="text-secondary" style="font-size: 14px;">Página <span
+                                class="bg-light px-3 py-1 rounded mx-1 text-dark border border-light-subtle"
+                                id="current-page">1</span> de <span id="total-pages" class="mx-1">7</span></span>
+                        <button class="btn btn-sm btn-link text-decoration-none px-2 fs-6 fw-bold" id="btn-next"
+                            style="color: #ea6f00;">&gt;</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-   <footer style="background-color: #f7f7f7;">
+    <footer style="background-color: #f7f7f7;">
         <section class="pt-5 pb-4 d-none d-lg-block">
             <div class="container">
                 <div class="row" id="footer-desktop-container"></div>
             </div>
         </section>
-        
+
         <section class="py-3 d-none d-lg-block border-top">
             <div class="container">
                 <div class="row align-items-center">
@@ -188,11 +255,21 @@
                         </span>
                     </div>
                     <div class="col-lg-3 d-flex justify-content-end gap-3">
-                        <a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg" alt="Facebook" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg" alt="Twitter" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://cl.linkedin.com/company/itauchile"><img src="assets/img/footerIcons/linkedin.svg" alt="Linkedin" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg" alt="instagram" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://www.tiktok.com/@itauchile?lang=es"><img src="assets/img/footerIcons/smartphone.svg" alt="tiktok" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg"
+                                alt="Facebook"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg"
+                                alt="Twitter"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://cl.linkedin.com/company/itauchile"><img
+                                src="assets/img/footerIcons/linkedin.svg" alt="Linkedin"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg"
+                                alt="instagram"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.tiktok.com/@itauchile?lang=es"><img
+                                src="assets/img/footerIcons/smartphone.svg" alt="tiktok"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
                     </div>
                 </div>
             </div>
@@ -210,5 +287,7 @@
     <script src="./assets/js/footerDesktop.js"></script>
     <script src="./assets/js/footerMobile.js"></script>
     <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/accessibility.js"></script>
 </body>
+
 </html>
