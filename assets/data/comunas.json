@@ -319,7 +319,7 @@
     "region": "Antofagasta",
     "comuna": "Calama",
     "direccion": "SOTOMAYOR # 2044",
-    "estado": "Abierta"
+    "estado": "Cerrada"
   },
   {
     "sucursal": "AV ALEMANIA",
@@ -452,7 +452,7 @@
     "region": "Los Lagos",
     "comuna": "Osorno",
     "direccion": "MANUEL ANTONIO MATTA # 624",
-    "estado": "Abierta"
+    "estado": "Cerrada"
   },
   {
     "sucursal": "PUERTO MONTT URMENETA",
@@ -494,7 +494,7 @@
     "region": "Maule",
     "comuna": "Talca",
     "direccion": "UNO SUR # 1132",
-    "estado": "Abierta"
+    "estado": "Cerrada"
   },
   {
     "sucursal": "TALCA PLAZA MAULE",
@@ -522,7 +522,7 @@
     "region": "O'Higgins",
     "comuna": "Rancagua",
     "direccion": "INDEPENDENCIA 699",
-    "estado": "Abierta"
+    "estado": "Cerrada"
   },
   {
     "sucursal": "SAN FERNANDO (IS-Condell)",
@@ -571,7 +571,7 @@
     "region": "Valparaíso",
     "comuna": "Quilpué",
     "direccion": "PORTALES 777",
-    "estado": "Abierta"
+    "estado": "Cerrada"
   },
   {
     "sucursal": "SAN ANTONIO (IS-Condell)",
@@ -606,7 +606,7 @@
     "region": "Valparaíso",
     "comuna": "Villa Alemana",
     "direccion": "AV. valparaiso 680-A",
-    "estado": "Abierta"
+    "estado": "Cerrada"
   },
   {
     "sucursal": "REÑACA",
@@ -634,6 +634,6 @@
     "region": "Valparaíso",
     "comuna": "Viña del Mar",
     "direccion": "AV LIBERTAD # 1075",
-    "estado": "Abierta"
+    "estado": "Cerrada"
   }
 ]

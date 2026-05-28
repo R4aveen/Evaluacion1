@@ -12,9 +12,9 @@ export async function fetchComunas() {
     } catch (error) {
         console.warn('Error fetching comunas:', error);
         return [
-            { codigo: '13114', nombre: 'Las Condes' }, 
-            { codigo: '13123', nombre: 'Providencia' }, 
-            { codigo: '13101', nombre: 'Santiago' }
+            { sucursal: 'APUMANQUE', region: 'Región Metropolitana', comuna: 'Las Condes', direccion: 'AV APOQUINDO # 5583 LOCAL 1', estado: 'Abierta' }, 
+            { sucursal: 'BILBAO', region: 'Región Metropolitana', comuna: 'Providencia', direccion: 'AV BILBAO # 2094', estado: 'Abierta' }, 
+            { sucursal: 'SAN DIEGO', region: 'Región Metropolitana', comuna: 'Santiago', direccion: 'SAN DIEGO # 1915', estado: 'Abierta' }
         ];
     }
 }
