@@ -389,3 +389,43 @@ hr.vertical {
     color: inherit;
     font-weight: 300;
 }
+
+.custom-sucursales-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.custom-sucursales-table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+.custom-sucursales-table tbody tr.sucursal-row td {
+    background-color: #ffffff;
+}
+
+.badge-abierta {
+    background-color: #e8f4fe;
+    color: #003698;
+}
+
+.badge-cerrada {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.form-check-input-orange:checked {
+    background-color: #ea6f00;
+    border-color: #ea6f00;
+}
+.form-check-input-orange:focus {
+    border-color: #ea6f00;
+    box-shadow: 0 0 0 0.25rem rgba(234, 111, 0, 0.25);
+}
+
+.custom-floating-select > label {
+    padding: 0.5rem 0.75rem;
+}
+
+.custom-floating-select > .form-select {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+}

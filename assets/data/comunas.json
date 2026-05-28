@@ -1,0 +1,639 @@
+[
+  {
+    "sucursal": "CERRILLOS",
+    "region": "Región Metropolitana",
+    "comuna": "Cerrillos",
+    "direccion": "AV.PEDRO AGUIRRE CERDA # 6115",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "PIEDRA ROJA CHICUREO",
+    "region": "Región Metropolitana",
+    "comuna": "Colina",
+    "direccion": "AV PASEO COLINA SUR # 14500 LOCAL 149",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "EL CORTIJO",
+    "region": "Región Metropolitana",
+    "comuna": "Conchalí",
+    "direccion": "AV AMERICO VESPUCIO # 2828",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CIUDAD EMPRESARIAL",
+    "region": "Región Metropolitana",
+    "comuna": "Huechuraba",
+    "direccion": "AV SANTA CLARA # 207 PISO 1",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "MALL PLAZA VESPUCIO",
+    "region": "Región Metropolitana",
+    "comuna": "La Florida",
+    "direccion": "FROILAN ROA # 7205 LOCAL 121-124",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LA REINA",
+    "region": "Región Metropolitana",
+    "comuna": "La Reina",
+    "direccion": "AV PRINCIPE DE GALES # 7096",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LA REINA SUR (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "La Reina",
+    "direccion": "AV PRINCIPE DE GALES # 7085",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "APUMANQUE",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "AV APOQUINDO # 5583 LOCAL 1",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "Banca Privada (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "PRESIDENTE RIESCO 5537, PISO 16",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CANTA GALLO",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "AV. las-condes # 12295 LOCAL 111",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "EL GOLF",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "AV APOQUINDO # 3457",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "EL GOLF PB",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "AV APOQUINDO # 3457",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ESTORIL (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "ESTORIL # 50 LOCAL 104 A Y LOCAL 104 B",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "NUEVA LAS CONDES",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "PRESIDENTE RIESCO 5537, PISO 1",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ISIDORA GOYENECHEA",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "ISIDORA GOYENECHEA # 2924",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "IV CENTENARIO (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "AV APOQUINDO # 6275 LOCAL 11",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "SAN CARLOS DE APOQUINDO",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "CAMINO EL ALBA # 11969 LOCAL 304",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "INVESTMENT CENTER VITACURA (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Las Condes",
+    "direccion": "Avenida Vitacura 2872, Torre Titanium, piso 1",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LO BARNECHEA",
+    "region": "Región Metropolitana",
+    "comuna": "Lo Barnechea",
+    "direccion": "EL RODEO # 12528",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LA DEHESA (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Lo Barnechea",
+    "direccion": "EL RODEO # 12618",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CAMPUS SAN JOAQUIN",
+    "region": "Región Metropolitana",
+    "comuna": "Macul",
+    "direccion": "AV.VICUÑA MACKENNA # 4860",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "MAIPU (IS-Condell)",
+    "region": "Región Metropolitana",
+    "comuna": "Maipú",
+    "direccion": "Av. Pajaritos N° 3195, locales 1, 2 y 3",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "MELIPILLA (IS-Condell)",
+    "region": "Región Metropolitana",
+    "comuna": "Melipilla",
+    "direccion": "SERRANO 287",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ÑUÑOA PLAZA (IS-Condell)",
+    "region": "Región Metropolitana",
+    "comuna": "Ñuñoa",
+    "direccion": "AV IRARRAZAVAL # 3333",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "PEÑALOLEN",
+    "region": "Región Metropolitana",
+    "comuna": "Peñalolén",
+    "direccion": "AV SANCHEZ FONTECILLA # 12200 LOCAL 1965",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "BILBAO",
+    "region": "Región Metropolitana",
+    "comuna": "Providencia",
+    "direccion": "AV BILBAO # 2094",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ORREGO LUCO",
+    "region": "Región Metropolitana",
+    "comuna": "Providencia",
+    "direccion": "Av. Providencia #2051",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ORREGO LUCO (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Providencia",
+    "direccion": "Providencia #2051 – piso 3, Providencia",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "PLAZA TOBALABA",
+    "region": "Región Metropolitana",
+    "comuna": "Puente Alto",
+    "direccion": "AV CAMILO HENRIQUEZ # 3692 LOC E 104-108",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "PUENTE ALTO (IS-Condell)",
+    "region": "Región Metropolitana",
+    "comuna": "Puente Alto",
+    "direccion": "CONCHA Y TORO # 1149 LOCAL 59",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "SAN BERNARDO PLAZA (IS-Condell)",
+    "region": "Región Metropolitana",
+    "comuna": "San Bernardo",
+    "direccion": "ARTURO PRAT # 495",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "GRAN AVENIDA",
+    "region": "Región Metropolitana",
+    "comuna": "San Miguel",
+    "direccion": "AV JOSE MIGUEL CARRERA # 5120",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ALAMEDA (IS-Condell)",
+    "region": "Región Metropolitana",
+    "comuna": "Santiago",
+    "direccion": "AV.BERNARDO OHIGGINS # 2206",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "MONEDA (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Santiago",
+    "direccion": "MONEDA # 799",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "SAN DIEGO",
+    "region": "Región Metropolitana",
+    "comuna": "Santiago",
+    "direccion": "SAN DIEGO # 1915",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "SANTIAGO 2000 PB",
+    "region": "Región Metropolitana",
+    "comuna": "Santiago",
+    "direccion": "HUERFANOS # 770 -B",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VICUÑA MACKENNA",
+    "region": "Región Metropolitana",
+    "comuna": "Santiago",
+    "direccion": "VICUÑA MACKENNA # 999",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "SANTIAGO 2000",
+    "region": "Región Metropolitana",
+    "comuna": "Santiago",
+    "direccion": "HUERFANOS # 770 -B",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "BANDERA (IS-Condell)",
+    "region": "Región Metropolitana",
+    "comuna": "Santiago",
+    "direccion": "HUERFANOS #1072",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LO CASTILLO CANDELARIA",
+    "region": "Región Metropolitana",
+    "comuna": "Vitacura",
+    "direccion": "vitacura # 3900",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LUIS PASTEUR (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Vitacura",
+    "direccion": "AV LUIS PASTEUR # 5944",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VITACURA LO BELTRAN",
+    "region": "Región Metropolitana",
+    "comuna": "Vitacura",
+    "direccion": "vitacura # 6635",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "NUEVA COSTANERA (PB)",
+    "region": "Región Metropolitana",
+    "comuna": "Vitacura",
+    "direccion": "AV NUEVA COSTANERA # 4120",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ANTOFAGASTA PLAZA (IS-Condell)",
+    "region": "Antofagasta",
+    "comuna": "Antofagasta",
+    "direccion": "AV SAN MARTIN # 2668",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ANTOFAGASTA PLAZA (PB)",
+    "region": "Antofagasta",
+    "comuna": "Antofagasta",
+    "direccion": "AV SAN MARTIN # 2668 (segundo piso)",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CALAMA",
+    "region": "Antofagasta",
+    "comuna": "Calama",
+    "direccion": "SOTOMAYOR # 2044",
+    "estado": "Cerrada"
+  },
+  {
+    "sucursal": "AV ALEMANIA",
+    "region": "Araucanía",
+    "comuna": "Temuco",
+    "direccion": "AV ALEMANIA # 0930",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "TEMUCO PLAZA",
+    "region": "Araucanía",
+    "comuna": "Temuco",
+    "direccion": "ARTURO PRAT # 743",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VILLARRICA (IS-Condell)",
+    "region": "Araucanía",
+    "comuna": "Villarrica",
+    "direccion": "CAMILO HENRIQUEZ 565",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "ARICA (IS-Condell)",
+    "region": "Arica y Parinacota",
+    "comuna": "Arica",
+    "direccion": "21 DE MAYO # 115",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "COPIAPO (IS-Condell)",
+    "region": "Atacama",
+    "comuna": "Copiapó",
+    "direccion": "Chacabuco 481",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VALLENAR (IS-Condell)",
+    "region": "Atacama",
+    "comuna": "Vallenar",
+    "direccion": "AV ARTURO PRAT # 1070",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "COYHAIQUE (IS-Condell)",
+    "region": "Aysén",
+    "comuna": "Coyhaique",
+    "direccion": "FRANCISCO BILBAO 204",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "BARRIO UNIVERSITARIO",
+    "region": "Bío Bío",
+    "comuna": "Concepción",
+    "direccion": "GALERIA EL FORO S/N BARRIO UNIVERSITARIO",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CONCEPCIÓN (PB)",
+    "region": "Bío Bío",
+    "comuna": "Concepción",
+    "direccion": "CAUPOLICÁN # 368",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CONCEPCIÓN PLAZA",
+    "region": "Bío Bío",
+    "comuna": "Concepción",
+    "direccion": "O HIGGINS # 612",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LOS ÁNGELES PLAZA (IS-Condell)",
+    "region": "Bío Bío",
+    "comuna": "Los Ángeles",
+    "direccion": "COLON # 398",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "SAN PEDRO DE LA PAZ",
+    "region": "Bío Bío",
+    "comuna": "San Pedro de la Paz",
+    "direccion": "AV MICHIMALONGO # 1113",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "BASE NAVAL",
+    "region": "Bío Bío",
+    "comuna": "Talcahuano",
+    "direccion": "AV JORGE MONTT # 21",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "MALL EL TREBOL",
+    "region": "Bío Bío",
+    "comuna": "Talcahuano",
+    "direccion": "Avda. Jorge Alessandri 3177 local G114",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "COQUIMBO (IS-Condell)",
+    "region": "Coquimbo",
+    "comuna": "Coquimbo",
+    "direccion": "AV ALDUNATE # 795",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LA SERENA",
+    "region": "Coquimbo",
+    "comuna": "La Serena",
+    "direccion": "ALBERTO SOLARI # 1400 LOCAL E -101",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LA SERENA PLAZA (IS-Condell)",
+    "region": "Coquimbo",
+    "comuna": "La Serena",
+    "direccion": "BALMACEDA # 540",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "OVALLE (IS-Condell)",
+    "region": "Coquimbo",
+    "comuna": "Ovalle",
+    "direccion": "VICTORIA # 271",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "OSORNO PLAZA (IS-Condell)",
+    "region": "Los Lagos",
+    "comuna": "Osorno",
+    "direccion": "MANUEL ANTONIO MATTA # 624",
+    "estado": "Cerrada"
+  },
+  {
+    "sucursal": "PUERTO MONTT URMENETA",
+    "region": "Los Lagos",
+    "comuna": "Puerto Montt",
+    "direccion": "AV URMENETA # 541",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VALDIVIA PLAZA (IS-Condell)",
+    "region": "Los Ríos",
+    "comuna": "Valdivia",
+    "direccion": "AV RAMON PICARTE # 370",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "PUNTA ARENAS PLAZA",
+    "region": "Magallanes",
+    "comuna": "Punta Arenas",
+    "direccion": "AV MAGALLANES # 944",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CURICÓ PLAZA (IS-Condell)",
+    "region": "Maule",
+    "comuna": "Curicó",
+    "direccion": "ESTADO # 370",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LINARES (IS-Condell)",
+    "region": "Maule",
+    "comuna": "Linares",
+    "direccion": "INDEPENDENCIA 481",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "TALCA",
+    "region": "Maule",
+    "comuna": "Talca",
+    "direccion": "UNO SUR # 1132",
+    "estado": "Cerrada"
+  },
+  {
+    "sucursal": "TALCA PLAZA MAULE",
+    "region": "Maule",
+    "comuna": "Talca",
+    "direccion": "AV CIRCUNVALACION # 30 ORIENTE",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "CHILLAN PLAZA (IS-Condell)",
+    "region": "Ñuble",
+    "comuna": "Chillan",
+    "direccion": "CONSTITUCION # 550",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "Machalí",
+    "region": "O'Higgins",
+    "comuna": "Machalí",
+    "direccion": "AVDA.SAN JUAN 133, LOCAL 1 MACHALI",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "RANCAGUA (IS-Condell)",
+    "region": "O'Higgins",
+    "comuna": "Rancagua",
+    "direccion": "INDEPENDENCIA 699",
+    "estado": "Cerrada"
+  },
+  {
+    "sucursal": "SAN FERNANDO (IS-Condell)",
+    "region": "O'Higgins",
+    "comuna": "San Fernando",
+    "direccion": "MANUEL RODRIGUEZ # 840",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "IQUIQUE PLAZA",
+    "region": "Tarapacá",
+    "comuna": "Iquique",
+    "direccion": "AV IGNACIO SERRANO # 280",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "IQUIQUE SUR (PB)",
+    "region": "Tarapacá",
+    "comuna": "Iquique",
+    "direccion": "AV DIAGONAL FCO BILBAO # 3422",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "IQUIQUE ZOFRI",
+    "region": "Tarapacá",
+    "comuna": "Iquique",
+    "direccion": "PLACA BANCARIA WANTAI L2 SITIO 1A MANZANA 1 RECINTO AMURALLADO",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "LOS ANDES (IS-Condell)",
+    "region": "Valparaíso",
+    "comuna": "Los Andes",
+    "direccion": "O¨HIGGINS # 248",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "QUILLOTA",
+    "region": "Valparaíso",
+    "comuna": "Quillota",
+    "direccion": "Maipú #352",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "Quilpué (IS-Condell)",
+    "region": "Valparaíso",
+    "comuna": "Quilpué",
+    "direccion": "PORTALES 777",
+    "estado": "Cerrada"
+  },
+  {
+    "sucursal": "SAN ANTONIO (IS-Condell)",
+    "region": "Valparaíso",
+    "comuna": "San Antonio",
+    "direccion": "Av. Barros Luco 1750",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "SAN FELIPE (IS-Condell)",
+    "region": "Valparaíso",
+    "comuna": "San Felipe",
+    "direccion": "ARTURO PRAT # 821",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VALPARAÍSO (PB)",
+    "region": "Valparaíso",
+    "comuna": "Valparaíso",
+    "direccion": "ARTURO PRAT # 828",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VALPARAÍSO INTENDENCIA (IS-Condell)",
+    "region": "Valparaíso",
+    "comuna": "Valparaíso",
+    "direccion": "AV ARTURO PRAT # 737",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "Villa Alemana (IS-Condell)",
+    "region": "Valparaíso",
+    "comuna": "Villa Alemana",
+    "direccion": "AV. valparaiso 680-A",
+    "estado": "Cerrada"
+  },
+  {
+    "sucursal": "REÑACA",
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "direccion": "AV BORGOÑO # 14475",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VIÑA DEL MAR (PB)",
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "direccion": "AL LIBERTAD # 971",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VIÑA ECUADOR (IS-Condell)",
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "direccion": "AV ECUADOR # 104",
+    "estado": "Abierta"
+  },
+  {
+    "sucursal": "VIÑA LIBERTAD",
+    "region": "Valparaíso",
+    "comuna": "Viña del Mar",
+    "direccion": "AV LIBERTAD # 1075",
+    "estado": "Cerrada"
+  }
+]
