@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos | Atención al cliente | Banco Itaú Chile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
+
 <body>
     <header class="w-100">
         <div class="container-fluid-nav w-100 d-none d-lg-flex justify-content-center"
@@ -21,19 +23,56 @@
                             style="font-size: 13px;">Personas</a>
                     </li>
                     <li class="h-100 d-flex">
-                        <a href="index.html" class="text-decoration-none text-black px-3 d-flex align-items-center h-100"
+                        <a href="index.html"
+                            class="text-decoration-none text-black px-3 d-flex align-items-center h-100"
                             style="background-color: #eee8e4; font-size: 13px;">Empresas</a>
                     </li>
                 </ul>
 
                 <ul class="d-flex list-unstyled m-0 p-0 align-items-center gap-3 mx-5">
-                    <li class="d-flex align-items-center gap-1 item-hover">
+                    <li class="d-flex align-items-center gap-1 item-hover position-relative" id="acc-menu-container">
                         <img src="assets/img/headerIcons/activity.svg" alt="Accesibilidad"
                             class="menu-lateral-arrow-icon filter-orange">
-                        <button class="btn btn-sm text-dark d-flex align-items-center gap-1"
+                        <button id="btn-accesibilidad-toggle"
+                            class="btn btn-sm text-dark d-flex align-items-center gap-1"
                             style="font-size: 13px; padding: 2px 8px;">Accesibilidad <img
                                 src="assets/img/headerIcons/chevron-down.svg" alt="Más opciones"
                                 style="width:14px; height:14px; color:#eb6f00;"></button>
+
+                        <div id="acc-dropdwon" class="acc-dropdwon d-none">
+                            <div class="acc-grid">
+                                <button class="acc-btn" id="btn-increase-font" title="Aumentar texto">
+                                    <span class="acc-icon"><span class="fw-bold fs-5">A+</span></span>
+                                    <span class="acc-text">Aumentar texto</span>
+                                </button>
+                                <button class="acc-btn" id="btn-decrease-font" title="Disminuir texto">
+                                    <span class="acc-icon"><span class="fw-bold fs-5">A&minus;</span></span>
+                                    <span class="acc-text">Disminuir texto</span>
+                                </button>
+                                <button class="acc-btn" id="btn-dark-mode" title="Modo oscuro">
+                                    <span class="acc-icon border-0">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="acc-text">Modo oscuro</span>
+                                </button>
+                                <button class="acc-btn active-reset" id="btn-reset-acc" title="Restablecer">
+                                    <span class="acc-icon border-0 mb-1">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+                                            <path d="M21 3v5h-5"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="acc-text">Restablecer</span>
+                                </button>
+                            </div>
+                        </div>
                     </li>
                     <li class="d-flex align-items-center gap-1 item-hover">
                         <img src="assets/img/headerIcons/help-circle.svg" alt="Contáctanos"
@@ -88,13 +127,14 @@
         <div class="offcanvas offcanvas-start border-0 shadow-sm" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel" style="width: 350px;">
             <div class="offcanvas-header justify-content-end p-0">
-                <button type="button" class="offcanvas-close-btn mt-2 me-2" data-bs-dismiss="offcanvas" aria-label="Close">
+                <button type="button" class="offcanvas-close-btn mt-2 me-2" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
                     Cerrar <span aria-hidden="true" style="font-size: 1.5rem; line-height: 1;">&times;</span>
                 </button>
             </div>
             <div class="offcanvas-body p-0 mt-2 pb-4">
                 <ul id="menu-principal-container" class="list-unstyled m-0"></ul>
-    
+
                 <ul id="menu-secundario-container" class="list-unstyled m-0 mt-3 d-lg-none border-top pt-3"></ul>
             </div>
         </div>
@@ -105,37 +145,49 @@
             <div class="container px-4">
                 <div class="row flex-lg-row-reverse align-items-center g-5">
                     <div class="col-12 col-lg-6 text-center">
-                        <img src="assets/img/contact/banner_contactanos_1024.webp" class="img-fluid" alt="contact banner" style="max-height: 400px; object-fit: contain;" loading="lazy">
+                        <img src="assets/img/contact/banner_contactanos_1024.webp" class="img-fluid"
+                            alt="contact banner" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     </div>
                     <div class="col-12 col-lg-6">
                         <nav aria-label="breadcrumb" class="breadcrumb mb-3">
-                             <ol class="breadcrumb m-0 px-4 py-2 border rounded-2" style="background-color: #ebebeb; cursor: default;">
-                                 <li class="breadcrumb-item active d-flex align-items-center gap-2" aria-current="page">
-                                     <img src="assets/img/contact/icons/home.svg" alt="" aria-hidden="true" class="menu-lateral-arrow-icon filter-orange">
-                                     <span>Contáctanos</span>
-                                 </li>
+                            <ol class="breadcrumb m-0 px-4 py-2 border rounded-2"
+                                style="background-color: #ebebeb; cursor: default;">
+                                <li class="breadcrumb-item active d-flex align-items-center gap-2" aria-current="page">
+                                    <img src="assets/img/contact/icons/home.svg" alt="" aria-hidden="true"
+                                        class="menu-lateral-arrow-icon filter-orange">
+                                    <span>Contáctanos</span>
+                                </li>
                             </ol>
                         </nav>
-                        <h1 class="display-5 fw-bold lh-1 mb-4">Si tienes consultas o comentarios, escríbenos y te contactaremos</h1>
-                        <button type="button" class="btn btn-acceso text-white btn-lg px-4" data-bs-toggle="offcanvas" data-bs-target="#contactOffcanvas" aria-controls="contactOffcanvas">Escríbenos a Itaú</button>
+                        <h1 class="display-5 fw-bold lh-1 mb-4">Si tienes consultas o comentarios, escríbenos y te
+                            contactaremos</h1>
+                        <button type="button" class="btn btn-acceso text-white btn-lg px-4" data-bs-toggle="offcanvas"
+                            data-bs-target="#contactOffcanvas" aria-controls="contactOffcanvas">Escríbenos a
+                            Itaú</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="py-5" style="background-color: #ffffff;">
-            <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 gap-md-5">
+            <div
+                class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 gap-md-5">
                 <h2 class="atencion-cliente-title m-0">Atención al Cliente</h2>
-                
+
                 <div class="d-flex align-items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eb6f00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#eb6f00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
                     </svg>
-                    <a href="tel:6006860888" class="text-dark fw-bold text-decoration-underline" style="font-size: 1.2rem; text-underline-offset: 4px;">600 686 0888</a>
+                    <a href="tel:6006860888" class="text-dark fw-bold text-decoration-underline"
+                        style="font-size: 1.2rem; text-underline-offset: 4px;">600 686 0888</a>
                 </div>
-                
+
                 <div class="d-flex align-items-center gap-2">
-                    <a href="tel:+56226860888" class="text-dark fw-bold text-decoration-underline" style="font-size: 1.2rem; text-underline-offset: 4px;">+562 2686 0888</a>
+                    <a href="tel:+56226860888" class="text-dark fw-bold text-decoration-underline"
+                        style="font-size: 1.2rem; text-underline-offset: 4px;">+562 2686 0888</a>
                 </div>
             </div>
         </section>
@@ -143,33 +195,47 @@
         <section class="py-5 bg-white" id="emergencias-bancarias">
             <div class="container-fluid px-4 px-md-5">
                 <h2 class="fw-bold mb-4" style="font-size: 2rem;">Emergencias bancarias</h2>
-                
+
                 <nav>
-                    <div class="nav nav-tabs custom-tabs border-0 rounded-top-4 flex-nowrap overflow-hidden shadow-sm" id="nav-tab" role="tablist">
-                        <button class="nav-link custom-tab-btn active col text-center py-3 px-2" id="nav-tab-1" data-bs-toggle="tab" data-bs-target="#nav-1" type="button" role="tab" aria-controls="nav-1" aria-selected="true">
+                    <div class="nav nav-tabs custom-tabs border-0 rounded-top-4 flex-nowrap overflow-hidden shadow-sm"
+                        id="nav-tab" role="tablist">
+                        <button class="nav-link custom-tab-btn active col text-center py-3 px-2" id="nav-tab-1"
+                            data-bs-toggle="tab" data-bs-target="#nav-1" type="button" role="tab" aria-controls="nav-1"
+                            aria-selected="true">
                             <span>Itaú general</span>
                         </button>
-                        <button class="nav-link custom-tab-btn col text-center py-3 px-2" id="nav-tab-2" data-bs-toggle="tab" data-bs-target="#nav-2" type="button" role="tab" aria-controls="nav-2" aria-selected="false">
+                        <button class="nav-link custom-tab-btn col text-center py-3 px-2" id="nav-tab-2"
+                            data-bs-toggle="tab" data-bs-target="#nav-2" type="button" role="tab" aria-controls="nav-2"
+                            aria-selected="false">
                             <span>Itaú MasterCard e Itaú Visa</span>
                         </button>
-                        <button class="nav-link custom-tab-btn col text-center py-3 px-2" id="nav-tab-3" data-bs-toggle="tab" data-bs-target="#nav-3" type="button" role="tab" aria-controls="nav-3" aria-selected="false">
+                        <button class="nav-link custom-tab-btn col text-center py-3 px-2" id="nav-tab-3"
+                            data-bs-toggle="tab" data-bs-target="#nav-3" type="button" role="tab" aria-controls="nav-3"
+                            aria-selected="false">
                             <span>Tarjetas débito Itaú</span>
                         </button>
-                        <button class="nav-link custom-tab-btn col text-center py-3 px-2" id="nav-tab-4" data-bs-toggle="tab" data-bs-target="#nav-4" type="button" role="tab" aria-controls="nav-4" aria-selected="false">
+                        <button class="nav-link custom-tab-btn col text-center py-3 px-2" id="nav-tab-4"
+                            data-bs-toggle="tab" data-bs-target="#nav-4" type="button" role="tab" aria-controls="nav-4"
+                            aria-selected="false">
                             <span>Cheques Itaú</span>
                         </button>
                     </div>
                 </nav>
-                
+
                 <div class="tab-content bg-light p-4 p-lg-5 rounded-bottom shadow-sm" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-tab-1">
                         <div class="row g-4 align-items-center">
                             <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-start">
-                                <img class="img-fluid rounded-4 shadow-sm" style="object-fit: cover; max-height: 400px; width: 100%; max-width: 521px;" alt="Itaú general" src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blt4b54c96c6638796d/67e6e7ebdc6ebc5b2bd93edb/emergencia_general.jpg">
+                                <img class="img-fluid rounded-4 shadow-sm"
+                                    style="object-fit: cover; max-height: 400px; width: 100%; max-width: 521px;"
+                                    alt="Itaú general"
+                                    src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blt4b54c96c6638796d/67e6e7ebdc6ebc5b2bd93edb/emergencia_general.jpg">
                             </div>
                             <div class="col-12 col-lg-7 order-1 order-lg-2 px-lg-5">
                                 <h3 class="fw-bold mb-3" style="color: #333;">Itaú</h3>
-                                <p class="mb-3">Marca desde tu celular <b>*Itau (*4828)</b> y un ejecutivo(a) de Itaú atenderá personalmente todas tus dudas brindando la ayuda y orientación que necesites para:</p>
+                                <p class="mb-3">Marca desde tu celular <b>*Itau (*4828)</b> y un ejecutivo(a) de Itaú
+                                    atenderá personalmente todas tus dudas brindando la ayuda y orientación que
+                                    necesites para:</p>
                                 <ul class="mb-0 text-secondary ps-3">
                                     <li class="mb-2">Bloquear tus tarjetas de débito y crédito.</li>
                                     <li class="mb-0">Dar orden de no pago a tus cheques.</li>
@@ -177,27 +243,44 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-tab-2">
                         <div class="row g-4 align-items-center mb-5">
                             <div class="col-12 col-lg-7 px-lg-5">
                                 <h4 class="fw-bold mb-3" style="color: #333;">Tarjetas Itaú MasterCard e Itaú Visa</h4>
-                                <p class="mb-3 text-secondary">Para bloquear tu tarjeta de forma definitiva, ingresa a tu sitio privado desde Itau.cl, abre la opción <strong>Tarjeta de crédito</strong> del menú, selecciona <strong>Bloqueo y reposición de tarjeta</strong>, y finalmente, elige la tarjeta que deseas bloquear. Desde tu App Itaú Chile, abre el menú, selecciona <strong>Tarjetas</strong> y haz clic en <strong>Bloqueo de tarjetas</strong>. Con este bloqueo en línea, podrás indicar la dirección en la que deseas recibir tu nueva tarjeta.</p>
-                                <p class="mb-0 text-secondary"><strong>En Chile:</strong> También puedes llamarnos al 6006860888 o al +56226860888 desde celulares.</p>
+                                <p class="mb-3 text-secondary">Para bloquear tu tarjeta de forma definitiva, ingresa a
+                                    tu sitio privado desde Itau.cl, abre la opción <strong>Tarjeta de crédito</strong>
+                                    del menú, selecciona <strong>Bloqueo y reposición de tarjeta</strong>, y finalmente,
+                                    elige la tarjeta que deseas bloquear. Desde tu App Itaú Chile, abre el menú,
+                                    selecciona <strong>Tarjetas</strong> y haz clic en <strong>Bloqueo de
+                                        tarjetas</strong>. Con este bloqueo en línea, podrás indicar la dirección en la
+                                    que deseas recibir tu nueva tarjeta.</p>
+                                <p class="mb-0 text-secondary"><strong>En Chile:</strong> También puedes llamarnos al
+                                    6006860888 o al +56226860888 desde celulares.</p>
                             </div>
                             <div class="col-12 col-lg-5 text-center text-lg-end">
-                                <img class="img-fluid rounded-4 shadow-sm" style="object-fit: cover; max-height: 400px; width: 100%; max-width: 720px;" alt="Tarjeta de crédito" src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blta0e2aeef6156df7b/67e6e7e96aa51632161004e8/emergencia_credito_1.jpeg">
+                                <img class="img-fluid rounded-4 shadow-sm"
+                                    style="object-fit: cover; max-height: 400px; width: 100%; max-width: 720px;"
+                                    alt="Tarjeta de crédito"
+                                    src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blta0e2aeef6156df7b/67e6e7e96aa51632161004e8/emergencia_credito_1.jpeg">
                             </div>
                         </div>
                         <div class="row g-4 align-items-center">
                             <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-start">
-                                <img class="img-fluid rounded-4 shadow-sm" style="object-fit: cover; max-height: 400px; width: 100%; max-width: 513px;" alt="En extranjero" src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/bltb70fd51d5bbe0b29/67e6e7e8709cce5d62e68573/emergencia_credito_2.png">
+                                <img class="img-fluid rounded-4 shadow-sm"
+                                    style="object-fit: cover; max-height: 400px; width: 100%; max-width: 513px;"
+                                    alt="En extranjero"
+                                    src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/bltb70fd51d5bbe0b29/67e6e7e8709cce5d62e68573/emergencia_credito_2.png">
                             </div>
                             <div class="col-12 col-lg-7 order-1 order-lg-2 px-lg-5">
                                 <h4 class="fw-bold mb-3" style="color: #333;">En extranjero</h4>
                                 <ul class="mb-0 text-secondary ps-3">
-                                    <li class="mb-3"><strong>En el extranjero:</strong> Tarjetas Itaú MasterCard: bloquear inmediatamente llamando a MasterCard Global Service al 1-636-722-7111 de Estados Unidos.</li>
-                                    <li class="mb-0">Tarjetas Itaú Visa: desde Estados Unidos y Canadá bloquear llamando al 1-800-396-9665. Desde otros lugares por cobrar al teléfono 1-410-902-8022 de USA.</li>
+                                    <li class="mb-3"><strong>En el extranjero:</strong> Tarjetas Itaú MasterCard:
+                                        bloquear inmediatamente llamando a MasterCard Global Service al 1-636-722-7111
+                                        de Estados Unidos.</li>
+                                    <li class="mb-0">Tarjetas Itaú Visa: desde Estados Unidos y Canadá bloquear llamando
+                                        al 1-800-396-9665. Desde otros lugares por cobrar al teléfono 1-410-902-8022 de
+                                        USA.</li>
                                 </ul>
                             </div>
                         </div>
@@ -206,11 +289,18 @@
                     <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-tab-3">
                         <div class="row g-4 align-items-center">
                             <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-start">
-                                <img class="img-fluid rounded-4 shadow-sm" style="object-fit: cover; max-height: 400px; width: 100%; max-width: 512px;" alt="Tarjetas débito" src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/bltc04a2592bfbfa0aa/67e6e7e86216a24c1b754663/emergencia_debito.png">
+                                <img class="img-fluid rounded-4 shadow-sm"
+                                    style="object-fit: cover; max-height: 400px; width: 100%; max-width: 512px;"
+                                    alt="Tarjetas débito"
+                                    src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/bltc04a2592bfbfa0aa/67e6e7e86216a24c1b754663/emergencia_debito.png">
                             </div>
                             <div class="col-12 col-lg-7 order-1 order-lg-2 px-lg-5">
                                 <h4 class="fw-bold mb-3" style="color: #333;">Tarjeta de Débito Itaú</h4>
-                                <p class="mb-0 text-secondary">Dar orden de bloqueo de la Tarjeta de Débito Itaú llamando a nuestra Banca Telefónica (600) 686 0888 o a Redbanc al 800 206 206, las 24 horas del día y los 365 días del año. No olvides registrar Fecha, Hora y Código de Bloqueo. Contáctate con tu ejecutivo (a) de cuentas de Itaú o envíanos un e-mail para solicitar una nueva tarjeta.</p>
+                                <p class="mb-0 text-secondary">Dar orden de bloqueo de la Tarjeta de Débito Itaú
+                                    llamando a nuestra Banca Telefónica (600) 686 0888 o a Redbanc al 800 206 206, las
+                                    24 horas del día y los 365 días del año. No olvides registrar Fecha, Hora y Código
+                                    de Bloqueo. Contáctate con tu ejecutivo (a) de cuentas de Itaú o envíanos un e-mail
+                                    para solicitar una nueva tarjeta.</p>
                             </div>
                         </div>
                     </div>
@@ -219,10 +309,14 @@
                         <div class="row g-4 align-items-center">
                             <div class="col-12 col-lg-7 px-lg-5">
                                 <h4 class="fw-bold mb-3" style="color: #333;">Cheques</h4>
-                                <p class="mb-0 text-secondary">Dar orden de no pago a banco Itaú, llamando a nuestra Banca Telefónica (600) 686 0888 las 24 horas del día y los 365 días del año.</p>
+                                <p class="mb-0 text-secondary">Dar orden de no pago a banco Itaú, llamando a nuestra
+                                    Banca Telefónica (600) 686 0888 las 24 horas del día y los 365 días del año.</p>
                             </div>
                             <div class="col-12 col-lg-5 text-center text-lg-end">
-                                <img class="img-fluid rounded-4 shadow-sm" style="object-fit: cover; max-height: 400px; width: 100%; max-width: 512px;" alt="Cheques" src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/bltda49ccff804029e4/67e6e7e692094232540a735c/emergencia_cheques.png">
+                                <img class="img-fluid rounded-4 shadow-sm"
+                                    style="object-fit: cover; max-height: 400px; width: 100%; max-width: 512px;"
+                                    alt="Cheques"
+                                    src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/bltda49ccff804029e4/67e6e7e692094232540a735c/emergencia_cheques.png">
                             </div>
                         </div>
                     </div>
@@ -232,44 +326,71 @@
 
         <section class="py-5" id="consejos-de-seguridad" style="background-color: #f4fbff;">
             <div class="container-fluid px-4 px-md-5">
-                
+
                 <div class="row align-items-end mb-4 g-4">
                     <div class="col-12 col-md-6 text-center text-md-start pb-md-4">
                         <h2 class="fw-bold mb-3" style="font-size: 2.2rem; color: #333;">Consejos de seguridad</h2>
                         <h3 class="fw-normal text-secondary fs-5 mb-0">5 tips para comprar seguro:</h3>
                     </div>
                     <div class="col-12 col-md-6 text-center">
-                        <img class="img-fluid" style="max-width: 320px; object-fit: contain; margin-bottom: -1rem; position: relative; z-index: 1;" alt="Consejos de seguridad" src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blt5e034ca4117d8373/67e6e7e5da9cfaf4e4e4e40a/consejos_seguridad.png">
+                        <img class="img-fluid"
+                            style="max-width: 320px; object-fit: contain; margin-bottom: -1rem; position: relative; z-index: 1;"
+                            alt="Consejos de seguridad"
+                            src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blt5e034ca4117d8373/67e6e7e5da9cfaf4e4e4e40a/consejos_seguridad.png">
                     </div>
                 </div>
 
                 <div class="row align-items-stretch g-4 position-relative" style="z-index: 2;">
                     <div class="col-12 col-lg-5 order-2 order-lg-1">
-                        <img class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; min-height: 300px;" alt="Mujer feliz sentada junto a un café, sosteniendo un móvil" src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blt883aa44dae2e4305/67e6e7ec85ddb8d729687949/lista_consejos_seguridad.jpeg">
+                        <img class="img-fluid rounded-4 shadow-sm w-100 h-100"
+                            style="object-fit: cover; min-height: 300px;"
+                            alt="Mujer feliz sentada junto a un café, sosteniendo un móvil"
+                            src="https://images.itau.cl/v3/assets/blt5ad73eb84118beed/blt883aa44dae2e4305/67e6e7ec85ddb8d729687949/lista_consejos_seguridad.jpeg">
                     </div>
-                    
+
                     <div class="col-12 col-lg-7 order-1 order-lg-2">
-                        <div class="bg-white p-4 p-lg-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center">
+                        <div
+                            class="bg-white p-4 p-lg-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center">
                             <ul class="list-unstyled mb-0 d-flex flex-column gap-4">
                                 <li class="d-flex align-items-start gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16" fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2"><circle cx="8" cy="8" r="8"/></svg>
-                                    <span class="text-secondary" style="font-size: 1.05rem;">Realiza compras solo desde tu computador o smartphone personal.</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16"
+                                        fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2">
+                                        <circle cx="8" cy="8" r="8" />
+                                    </svg>
+                                    <span class="text-secondary" style="font-size: 1.05rem;">Realiza compras solo desde
+                                        tu computador o smartphone personal.</span>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16" fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2"><circle cx="8" cy="8" r="8"/></svg>
-                                    <span class="text-secondary" style="font-size: 1.05rem;">Evita las señales de wifi públicas, podrían vulnerar tus datos.</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16"
+                                        fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2">
+                                        <circle cx="8" cy="8" r="8" />
+                                    </svg>
+                                    <span class="text-secondary" style="font-size: 1.05rem;">Evita las señales de wifi
+                                        públicas, podrían vulnerar tus datos.</span>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16" fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2"><circle cx="8" cy="8" r="8"/></svg>
-                                    <span class="text-secondary" style="font-size: 1.05rem;">Siempre compra en sitios seguros, que son los que muestran el candado cerrado.</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16"
+                                        fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2">
+                                        <circle cx="8" cy="8" r="8" />
+                                    </svg>
+                                    <span class="text-secondary" style="font-size: 1.05rem;">Siempre compra en sitios
+                                        seguros, que son los que muestran el candado cerrado.</span>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16" fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2"><circle cx="8" cy="8" r="8"/></svg>
-                                    <span class="text-secondary" style="font-size: 1.05rem;">Compra en sitios de confianza y que cumplan con las exigencias mínimas de seguridad.</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16"
+                                        fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2">
+                                        <circle cx="8" cy="8" r="8" />
+                                    </svg>
+                                    <span class="text-secondary" style="font-size: 1.05rem;">Compra en sitios de
+                                        confianza y que cumplan con las exigencias mínimas de seguridad.</span>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16" fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2"><circle cx="8" cy="8" r="8"/></svg>
-                                    <span class="text-secondary" style="font-size: 1.05rem;">No compartas tu información bancaria por llamadas telefónicas ni chats.</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 16 16"
+                                        fill="var(--color-primario-orange)" class="flex-shrink-0 mt-2">
+                                        <circle cx="8" cy="8" r="8" />
+                                    </svg>
+                                    <span class="text-secondary" style="font-size: 1.05rem;">No compartas tu información
+                                        bancaria por llamadas telefónicas ni chats.</span>
                                 </li>
                             </ul>
                         </div>
@@ -279,16 +400,16 @@
             </div>
         </section>
 
-        
+
     </main>
 
-   <footer style="background-color: #f7f7f7;">
+    <footer style="background-color: #f7f7f7;">
         <section class="pt-5 pb-4 d-none d-lg-block">
             <div class="container">
                 <div class="row" id="footer-desktop-container"></div>
             </div>
         </section>
-        
+
         <section class="py-3 d-none d-lg-block border-top">
             <div class="container">
                 <div class="row align-items-center">
@@ -300,11 +421,21 @@
                         </span>
                     </div>
                     <div class="col-lg-3 d-flex justify-content-end gap-3">
-                        <a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg" alt="Facebook" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg" alt="Twitter" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://cl.linkedin.com/company/itauchile"><img src="assets/img/footerIcons/linkedin.svg" alt="Linkedin" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg" alt="instagram" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
-                        <a href="https://www.tiktok.com/@itauchile?lang=es"><img src="assets/img/footerIcons/smartphone.svg" alt="tiktok" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://es-la.facebook.com/itauchile"><img src="assets/img/footerIcons/facebook.svg"
+                                alt="Facebook"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://twitter.com/itauchile"><img src="assets/img/footerIcons/twitter.svg"
+                                alt="Twitter"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://cl.linkedin.com/company/itauchile"><img
+                                src="assets/img/footerIcons/linkedin.svg" alt="Linkedin"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.instagram.com/itauchile"><img src="assets/img/footerIcons/instagram.svg"
+                                alt="instagram"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
+                        <a href="https://www.tiktok.com/@itauchile?lang=es"><img
+                                src="assets/img/footerIcons/smartphone.svg" alt="tiktok"
+                                style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);"></a>
                     </div>
                 </div>
             </div>
@@ -323,5 +454,7 @@
     <script src="./assets/js/footerMobile.js"></script>
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/accessibility.js"></script>
 </body>
+
 </html>
