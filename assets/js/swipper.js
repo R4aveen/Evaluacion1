@@ -1,27 +1,27 @@
 const bannerData = [
   { 
-    img: "assets/img/hero/Banners_SP_Vitrina_Empresas_Abril.jpeg", 
+    img: "assets/img/hero/Banners_SP_Vitrina_Empresas_Abril.webp", 
     title: "¿Recibiste devolución?<br>Invierte hoy", 
     text: "Contrata online un depósito a plazo y conoce tu<br>rentabilidad desde el inicio.", 
     link: "#", 
     alt: "Inversiones" 
   },
   { 
-    img: "assets/img/hero/Bnn_Vitrina_Empresas_Febrero_1920x1080.jpeg", 
+    img: "assets/img/hero/Bnn_Vitrina_Empresas_Febrero_1920x1080.webp", 
     title: "Activa tu pago de impuestos<br>con Itaú", 
     text: "Mantén tu empresa al día desde un solo lugar, 100% digital.", 
     link: "#", 
     alt: "Inversiones" 
   },
   { 
-    img: "assets/img/hero/Empresas-01.jpeg", 
+    img: "assets/img/hero/Empresas-01.webp", 
     title: "Potencia tu negocio con<br>capital de trabajo", 
     text: "Créditos 100% digital y con la seguridad que nos caracteriza.", 
     link: "#", 
     alt: "Inversiones" 
   },
   { 
-    img: "assets/img/hero/02_Vitrina_web_-_Empresas_05_1920x1080_Handshake.jpeg", 
+    img: "assets/img/hero/02_Vitrina_web_-_Empresas_05_1920x1080_Handshake.webp", 
     title: "Potencia tu negocio", 
     text: "Créditos 100% digital para tu empresa.", 
     link: "#", 

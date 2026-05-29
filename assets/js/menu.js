@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="./assets/img/headerIcons/${item.icon}" alt="${item.title}" class="menu-lateral-icon filter-orange">
                         <span>${item.title}</span>
                     </div>
-                    <img src="./assets/img/headerIcons/chevron-right.svg" alt="Ir a ${item.title}" class="menu-lateral-arrow-icon filter-orange">
+                    <img width="24" height="24" src="./assets/img/headerIcons/chevron-right.svg" alt="Ir a ${item.title}" class="menu-lateral-arrow-icon filter-orange">
                 </a>
             </li>
         `).join('');
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark ${item.isBold ? 'fw-bold' : ''}">
                     ${item.icon ? `<img src="assets/img/headerIcons/${item.icon}" alt="${item.title}" class="filter-orange" style="width:18px; height:18px;">` : '<span>'}
                     ${item.icon ? item.title : `${item.title}</span>`}
-                    <img src="./assets/img/headerIcons/chevron-right.svg" alt="" class="menu-lateral-arrow-icon filter-orange ms-auto">
+                    <img width="24" height="24" src="./assets/img/headerIcons/chevron-right.svg" alt="imagen" class="menu-lateral-arrow-icon filter-orange ms-auto">
                 </a>
             </li>    
         `).join('');
