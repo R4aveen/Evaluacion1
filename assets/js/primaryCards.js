@@ -12,7 +12,7 @@ const cardsData = [
         btnText: 'Conocer más'
     },
     {
-        img: 'comercio_internacional.png', 
+        img: 'comercio_internacional.webp', 
         title: 'Comercio internacional con Portal Comex',
         text: 'Gestiona pagos, cobranzas, financiamiento y más.',
         btnText: 'Conocer más'
@@ -24,7 +24,7 @@ const cardsData = [
         btnText: 'Revisar catálogo'
     },
     {
-        img: 'factoring_digital.png',
+        img: 'factoring_digital.webp',
         title: 'Impulsa tu negocio con Factoring digital',
         text: 'Con abono en línea, recibe tus fondos en 10 minutos.',
         btnText: 'Conocer más'

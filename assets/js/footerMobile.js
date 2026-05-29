@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="d-flex justify-content-center gap-4">
                     ${footerData.help.phones.map(phone => `
                         <div class="d-flex align-items-center gap-2">
-                            <img src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
+                            <img width="24" height="24" src="assets/img/footerIcons/smartphone.svg" alt="Celular" style="width: 16px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
                             <a class="text-decoration-none fw-bold" style="color: #666; font-size: 0.9rem;" href="tel:${phone}">${phone}</a>
                         </div>
                     `).join('')}
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="d-flex justify-content-center gap-2 flex-wrap">
                     ${footerData.apps.map(app => `
                         <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
-                            <img src="./assets/img/footerIcons/${app.img}" alt="${app.alt}" style="height: 32px;">
+                            <img width="161" height="48" src="./assets/img/footerIcons/${app.img}" alt="${app.alt}" style="height: 32px;">
                         </a>
                     `).join('')}
                 </div>
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="d-flex justify-content-center gap-3 mb-4">
                     ${footerData.socials.map(soc => `
                         <a href="${soc.url}">
-                            <img src="assets/img/footerIcons/${soc.name}.svg" alt="${soc.name}" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
+                            <img width="24" height="24" src="assets/img/footerIcons/${soc.name}.svg" alt="${soc.name}" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
                         </a>
                     `).join('')}
                 </div>

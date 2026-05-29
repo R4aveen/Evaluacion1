@@ -1,27 +1,27 @@
 const bannerData = [
   { 
-    img: "assets/img/hero/Banners_SP_Vitrina_Empresas_Abril.jpeg", 
+    img: "assets/img/hero/Banners_SP_Vitrina_Empresas_Abril.webp", 
     title: "¿Recibiste devolución?<br>Invierte hoy", 
     text: "Contrata online un depósito a plazo y conoce tu<br>rentabilidad desde el inicio.", 
     link: "#", 
     alt: "Inversiones" 
   },
   { 
-    img: "assets/img/hero/Bnn_Vitrina_Empresas_Febrero_1920x1080.jpeg", 
+    img: "assets/img/hero/Bnn_Vitrina_Empresas_Febrero_1920x1080.webp", 
     title: "Activa tu pago de impuestos<br>con Itaú", 
     text: "Mantén tu empresa al día desde un solo lugar, 100% digital.", 
     link: "#", 
     alt: "Inversiones" 
   },
   { 
-    img: "assets/img/hero/Empresas-01.jpeg", 
+    img: "assets/img/hero/Empresas-01.webp", 
     title: "Potencia tu negocio con<br>capital de trabajo", 
     text: "Créditos 100% digital y con la seguridad que nos caracteriza.", 
     link: "#", 
     alt: "Inversiones" 
   },
   { 
-    img: "assets/img/hero/02_Vitrina_web_-_Empresas_05_1920x1080_Handshake.jpeg", 
+    img: "assets/img/hero/02_Vitrina_web_-_Empresas_05_1920x1080_Handshake.webp", 
     title: "Potencia tu negocio", 
     text: "Créditos 100% digital para tu empresa.", 
     link: "#", 
@@ -32,10 +32,13 @@ const bannerData = [
 const track = document.getElementById('hero-slider-track');
 
 if (track) {
-  track.innerHTML = bannerData.map(slide => `
-    <div class="custom-slide w-100 flex-shrink-0">
+  track.style.display = 'block';
+  track.style.position = 'relative';
+  track.style.height = '100%';
+  track.innerHTML = bannerData.map((slide, i) => `
+    <div class="custom-slide w-100 flex-shrink-0" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:${i === 0 ? '1' : '0'};z-index:${i === 0 ? '2' : '1'};pointer-events:${i === 0 ? 'auto' : 'none'};transition:opacity 0.8s ease-in-out;">
       <div class="position-relative w-100 h-100">
-        <img src="${slide.img}" alt="${slide.alt}" class="hero-img">
+        <img src="${slide.img}" alt="${slide.alt}" class="hero-img" width="1600" height="900">
         <div class="position-absolute top-0 start-0 w-100 h-100 z-1" style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;"></div>
         <div class="position-absolute top-50 start-0 translate-middle-y text-white z-3" style="padding-left: 8%; padding-right: 5%;">
           <span class="d-block hero-title">${slide.title}</span>
