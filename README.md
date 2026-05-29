@@ -1,4 +1,3 @@
-```markdown
 # Banco Itaú Empresas - UI Clone & JS Engine
 
 > Proyecto del Módulo 1 — HTML + CSS + JS · Diplomado Fullstack IPSS
