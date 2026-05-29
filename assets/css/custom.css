@@ -293,6 +293,10 @@ hr.vertical {
   object-position: 70% center;
 }
 
+.gradient-bg-split {
+  background: linear-gradient(180deg, #ffffff 50%, #f7f7f7 50%);
+}
+
 @media (min-width: 768px) {
   .cta-overlay {
     background: linear-gradient(90deg, rgba(20, 20, 20, 0.85) 0%, rgba(20, 20, 20, 0.7) 35%, transparent 60%);
@@ -696,4 +700,21 @@ body.dark-mode .acc-btn.active-reset:hover {
 body.dark-mode .acc-btn.active-reset {
   background-color: var(--bs-body-bg) !important;
   border-color: var(--bs-border-color) !important;
+}
+
+body.dark-mode .gradient-bg-split {
+  background: linear-gradient(180deg, var(--bs-secondary-bg) 50%, var(--bs-body-bg) 50%) !important;
+}
+
+body.dark-mode .btn-outline-finance,
+body.dark-mode .btn-cliente {
+  color: var(--bs-body-color) !important;
+  border-color: var(--bs-body-color) !important;
+  background-color: transparent !important;
+}
+
+body.dark-mode .btn-outline-finance:hover,
+body.dark-mode .btn-cliente:hover {
+  background-color: var(--bs-body-color) !important;
+  color: var(--bs-body-bg) !important;
 }
