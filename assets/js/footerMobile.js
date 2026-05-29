@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="d-flex justify-content-center gap-2 flex-wrap">
                     ${footerData.apps.map(app => `
                         <a href="https://banco-itau.onelink.me/ndHT/Storeitau">
-                            <img src="./assets/img/footerIcons/${app.img}" alt="${app.alt}" style="height: 32px;">
+                            <img width="161" height="48" src="./assets/img/footerIcons/${app.img}" alt="${app.alt}" style="height: 32px;">
                         </a>
                     `).join('')}
                 </div>
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="d-flex justify-content-center gap-3 mb-4">
                     ${footerData.socials.map(soc => `
                         <a href="${soc.url}">
-                            <img src="assets/img/footerIcons/${soc.name}.svg" alt="${soc.name}" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
+                            <img width="24" height="24" src="assets/img/footerIcons/${soc.name}.svg" alt="${soc.name}" style="width: 24px; filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(4066%) hue-rotate(9deg) brightness(101%) contrast(106%);">
                         </a>
                     `).join('')}
                 </div>

@@ -32,10 +32,13 @@ const bannerData = [
 const track = document.getElementById('hero-slider-track');
 
 if (track) {
-  track.innerHTML = bannerData.map(slide => `
-    <div class="custom-slide w-100 flex-shrink-0">
+  track.style.display = 'block';
+  track.style.position = 'relative';
+  track.style.height = '100%';
+  track.innerHTML = bannerData.map((slide, i) => `
+    <div class="custom-slide w-100 flex-shrink-0" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:${i === 0 ? '1' : '0'};z-index:${i === 0 ? '2' : '1'};pointer-events:${i === 0 ? 'auto' : 'none'};transition:opacity 0.8s ease-in-out;">
       <div class="position-relative w-100 h-100">
-        <img src="${slide.img}" alt="${slide.alt}" class="hero-img">
+        <img src="${slide.img}" alt="${slide.alt}" class="hero-img" width="1600" height="900">
         <div class="position-absolute top-0 start-0 w-100 h-100 z-1" style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;"></div>
         <div class="position-absolute top-50 start-0 translate-middle-y text-white z-3" style="padding-left: 8%; padding-right: 5%;">
           <span class="d-block hero-title">${slide.title}</span>

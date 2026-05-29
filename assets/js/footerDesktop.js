@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="footer-title fw-bold" style="color: #666; font-size: 0.9rem;">${footerData.apps.title}</p>
                 ${footerData.apps.links.map(app => `
                     <a href="${app.url}" class="${app.className}">
-                        <img src="./assets/img/footerIcons/${app.img}" alt="${app.alt}" class="pepito">
+                    <img width="161" height="48" src="./assets/img/footerIcons/${app.img}" alt="${app.alt}" class="pepito">
                     </a>
                 `).join('')}
             </div>
